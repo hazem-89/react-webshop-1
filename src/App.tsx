@@ -1,4 +1,3 @@
-import React from 'react';
 
 function App() {
   return (
@@ -6,6 +5,10 @@ function App() {
       Hello World
     </div>
   );
+}
+
+export type CartItemType {
+  id:
 }
 
 export default App;
