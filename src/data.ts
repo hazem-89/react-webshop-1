@@ -1,4 +1,4 @@
-export type CartItemType = {
+export interface CartItemType  {
     id: number;
     category: string;
     description: string;
