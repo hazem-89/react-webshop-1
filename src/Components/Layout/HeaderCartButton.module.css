@@ -1,0 +1,56 @@
+.button {
+    cursor: pointer;
+    font: inherit;
+    border: none;
+    background-color: #141414;
+    color: white;
+    padding: 0.75rem 1.2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  .button:hover,
+  .button:active {
+    background-color: #252525;
+    transform: scale(106%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: 150ms;
+  }
+
+  .button:active {
+    transform: translate(0, .05rem);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+  }
+  
+  .colorchange {
+    background-color: #936EFE;
+  }
+
+  .colorchange:hover {
+    background-color: #7e5de0;
+  }
+  
+  .bump {
+    animation: bump 300ms ease-out;
+  }
+  
+  @keyframes bump {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(0.9);
+    }
+    30% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

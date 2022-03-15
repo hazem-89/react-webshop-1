@@ -1,0 +1,136 @@
+.cart-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 1rem 0;
+}
+
+.cart-item-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+img {
+  width: 16rem;
+  height: 10rem;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  object-position: center 70%;
+  border-radius: 8px;
+}
+
+.cart-item h2 {
+  font-size: 1.3rem;
+  color: #363636;
+  margin-bottom: -.6rem;
+}
+
+.price {
+  font-weight: 400;
+  color: #333;
+}
+
+.cart-item-info-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.amount {
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding: .5rem;
+  border-radius: 6px;
+  width: 2.5rem;
+  color: #363636;
+  text-align: center;
+}
+
+.bottom-btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.cart-item-info-bottom button {
+  font: inherit;
+  height: 2.3rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #333;
+  border: none;
+  width: 3rem;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  cursor: pointer;
+}
+
+.cart-item-info-bottom button:hover,
+.cart-item-info-bottom button:active {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 580px) {
+  img {
+    width: 10rem;
+  }
+}
+
+@media (max-width: 475px) {
+  img {
+    width: 7rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .cart-item {
+    padding: 0 0 2rem 0;
+  }
+
+  .cart-item-container {
+    flex-direction: column;
+    gap: 0rem;
+    padding: 0 1rem;
+  }
+
+  img {
+    width: 28rem;
+    transform: scale(.7);
+    margin-bottom: -2.5rem;
+    margin-top: -1.5rem;
+    border-radius: 15px;
+    height: 15rem;
+  }
+
+  .cart-item-info {
+    gap: 0rem;
+  }
+
+  .price {
+    margin-bottom: .5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  img {
+    width: 24rem;
+  }
+ }
+
+ @media (max-width: 350px) {
+  img {
+    width: 22rem;
+  }
+ }

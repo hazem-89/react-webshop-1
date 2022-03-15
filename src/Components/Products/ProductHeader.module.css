@@ -1,0 +1,24 @@
+.product-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7rem auto 0 auto;
+    max-width: 1250px;
+    width: 81%;
+}
+
+.product-header-container h2 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.sort-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sort-container span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}

@@ -1,0 +1,48 @@
+.add-icon {
+    position: absolute;
+    top: 4rem;
+    right: 3rem;
+    border: none;
+    border-radius: 100px;
+    padding: .65rem .65rem .5rem .65rem;
+    background-color: #252525;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.add-icon:hover {
+    transform: scale(106%);
+    cursor: pointer;
+    transition: 150ms;
+}
+
+.add-icon:active {
+  transform: translate(0, .05rem);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+}
+
+@media (max-width: 400px) {
+    .card {
+        height: 25rem;
+        background-position: center 100%;
+    }
+
+    .add-icon {
+        top: 82%;
+        right: 50%;
+        transform: translate(50%);
+        border-radius: 6px;
+        padding: .35rem 6.5rem .2rem 6.5rem;
+        background-color: #252525;
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .add-icon:hover {
+        transform: translate(50%);
+    }
+    
+    .add-icon:active {
+      transform: translate(50%);
+    }
+}

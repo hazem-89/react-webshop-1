@@ -1,58 +1,59 @@
-import { Drawer } from "@material-ui/core";
-import { useState, useEffect } from "react";
-import MainPage from "./Components/MainPage/MainPage";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import Badge from "@material-ui/core/Badge";
-import Grid from "@material-ui/core/Grid";
-import { CartItemType } from './data';
-import Item from './Components/Item/Item';
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import CartProvider from "./Store/cart-provider";
 
-//style
-import { Wrapper, StyledCart } from "./App.style"
+import { Product } from "./data";
+import Header from "./Components/Layout/Header";
+import Products from "./Components/Products/Products";
+import Cart from "./Components/Cart/Cart";
+import ProductDetailedPage from "./Components/ProductDetailedPage/ProductDetailedPage";
+import UserInfoPage from "./Components/PaymentSection/userInfoPage/UserInfoPage";
+import DeliveryPage from "./Components/PaymentSection/DeliveryPage/DeliveryPage";
+import PaymentPage from "./Components/PaymentSection/PaymentPage/PaymentPage";
+import ConfirmationPage from "./Components/PaymentSection/ConfirmationPage/ConfirmationPage";
+import CardPaymentPage from "./Components/PaymentSection/PaymentPage/CardPaymentPage";
+import SwishPaymentPage from "./Components/PaymentSection/PaymentPage/SwishPaymentPage";
 
-  interface Props {
-    item: CartItemType;
+interface Props {
+  item: Product;
+}
+function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const showCartHandler = () => {
+    setIsCartOpen(true)
   }
-  function App() {
-    const [isCartOpen, setIsCartOpen] = useState(false);
-    const [data, setData] = useState([])
-
-    const handelAddToCart = (clickedItem: CartItemType) => null;
-    const url = 'https://fakestoreapi.com/products';
-    useEffect (() => {
-      fetch(url)
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        const product = data;
-        setData(product)
-        console.log(product);
-      })
-    })
-    return (
-    <Wrapper>
-      <div className="main-Container">
-        <Drawer anchor='right' open={isCartOpen} onClose={() => setIsCartOpen(false)}>
-          Cart goes here 
-        </Drawer>
-        <StyledCart onClick={() => setIsCartOpen(true)}>
-        <Badge  color='error'>
-            <AddShoppingCartIcon />
-        </Badge>
-        </StyledCart>
-        <Grid container spacing={3} >
-        {data?.map(item => (
-          <Grid item key={item.id} xs='auto' sm={4}>
-            <Item item={item} handelAddToCart={handelAddToCart} />
-          </Grid>
-        ))}
-      </Grid>
-        <MainPage />
-      </div>
-    </Wrapper>
-  )
+  const hideCartHandler = () => {
+    setIsCartOpen(false)
   }
+
+  return (
+    <Routes>
+      <Route path="/" element={
+        <CartProvider>
+          {isCartOpen && <Cart onClose={hideCartHandler} />}
+          <Header onShowCart={showCartHandler} />
+          <main>
+            <Products />
+          </main>
+        </CartProvider>
+      } />
+      <Route path=":productId" element={
+        <CartProvider>
+          {isCartOpen && <Cart onClose={hideCartHandler} />}
+          <Header onShowCart={showCartHandler} />
+          <ProductDetailedPage />
+        </CartProvider>
+      } />
+      <Route path="checkout/user-info" element={<UserInfoPage />} />
+      <Route path="checkout/delivery" element={<DeliveryPage />} />
+      <Route path="checkout/payment" element={<PaymentPage />} />
+      <Route path="checkout/payment/card" element={<CardPaymentPage />} />
+      <Route path="checkout/payment/swish" element={<SwishPaymentPage />} />
+      <Route path="checkout/confirmation" element={<ConfirmationPage />} />
+    </Routes>
+  );
+}
 
 export default App;
 
