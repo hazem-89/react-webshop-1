@@ -45,6 +45,7 @@ const validate = (values: FormValues) => {
 
 const CardPaymentPage = (props: Props) => {
     const cartCtx = useContext(CartContext);
+    console.log(cartCtx);
 
     const totalAmount = `${cartCtx.totalAmount.toFixed(2)}:-`;
     const shippingCost = `${props.deliveryData?.price}:-`;
