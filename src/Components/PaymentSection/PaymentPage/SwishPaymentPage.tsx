@@ -6,9 +6,14 @@ import { Fragment } from "react";
 
 import progressbar3 from '../../../assets/images/progressbar-3.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { UserData } from '../../../data';
 
 interface FormValues {
     phone: string;
+}
+
+interface Props {
+    userData?: UserData;
 }
 
 const validate = (values: FormValues) => {
@@ -23,11 +28,11 @@ const validate = (values: FormValues) => {
     return errors;
 };
 
-const SwishPaymentPage = () => {
+const SwishPaymentPage = (props: Props) => {
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
-            phone: '',
+            phone: `${props.userData?.phone}` || '1234567890',
         },
         validate,
         onSubmit: values => {

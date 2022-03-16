@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CartProvider from "./Store/cart-provider";
 
@@ -17,8 +17,8 @@ import SwishPaymentPage from "./Components/PaymentSection/PaymentPage/SwishPayme
 function App() {
   const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [deliveryData, setDeliveryData] = useState({});
-  const [userData, setUserData] = useState({});
+  const [deliveryData, setDeliveryData] = useState<DeliveryData>();
+  const [userData, setUserData] = useState<UserData>();
 
   const showCartHandler = () => {
     setIsCartOpen(true)
@@ -29,11 +29,15 @@ function App() {
 
   const userDataHandler = (savedUserData: UserData) => {
     setUserData(savedUserData);
+    console.log(userData);
+    if(!userData) return;
     navigate('/checkout/delivery');
   }
 
   const deliveryDataHandler = (savedDeliveryData: DeliveryData) => {
     setDeliveryData(savedDeliveryData);
+    console.log(deliveryData);
+    if(!deliveryData) return;
     navigate('/checkout/payment');
   }
 
@@ -58,8 +62,12 @@ function App() {
       <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />
       <Route path="checkout/delivery" element={<DeliveryPage savedDeliveryData={deliveryDataHandler} />} />
       <Route path="checkout/payment" element={<PaymentPage />} />
-      <Route path="checkout/payment/card" element={<CardPaymentPage />} />
-      <Route path="checkout/payment/swish" element={<SwishPaymentPage />} />
+      <Route path="checkout/payment/card" element={
+        <CartProvider>
+          <CardPaymentPage deliveryData={deliveryData} />
+        </CartProvider>
+      } />
+      <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} />} />
       <Route path="checkout/confirmation" element={<ConfirmationPage />} />
     </Routes>
   );

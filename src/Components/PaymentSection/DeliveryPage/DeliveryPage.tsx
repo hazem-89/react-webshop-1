@@ -48,7 +48,7 @@ const DeliveryPage = (props: Props) => {
                         onChange={formik.handleChange}
                         value={JSON.stringify({
                             delivery: 'instabox', 
-                            price: 69,
+                            price: '69',
                             time: '1-2 days',
                         })}
                     />
@@ -67,7 +67,7 @@ const DeliveryPage = (props: Props) => {
                         onChange={formik.handleChange}
                         value={JSON.stringify({
                             delivery: 'budbee', 
-                            price: 0,
+                            price: '0',
                             time: '3-4 days',
                         })}
                     />
@@ -86,7 +86,7 @@ const DeliveryPage = (props: Props) => {
                         onChange={formik.handleChange}
                         value={JSON.stringify({
                             delivery: 'postnord', 
-                            price: 49,
+                            price: '49',
                             time: '2-3 days',
                         })}
                     />

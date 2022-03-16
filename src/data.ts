@@ -16,6 +16,6 @@ export interface UserData {
 
 export interface DeliveryData {
     delivery: string;
-    price: number;
+    price: string;
     time: string;
 }
