@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import {FormikErrors, useFormik} from 'formik';
 
 import classes from './UserInfoPage.module.css';
@@ -7,16 +6,14 @@ import { Fragment } from "react";
 
 import progressbar1 from '../../../assets/images/progressbar-1.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { UserData } from "../../../data";
 
-interface FormValues {
-    name: string;
-    email: string;
-    phone: string;
-    adress: string;
+interface Props {
+    savedUserData: (deliveryData: UserData) => void;
 }
 
-const validate = (values: FormValues) => {
-    const errors: FormikErrors<FormValues> = {};
+const validate = (values: UserData) => {
+    const errors: FormikErrors<UserData> = {};
  
     if (!values.name) {
       errors.name = 'Required';
@@ -43,8 +40,7 @@ const validate = (values: FormValues) => {
     return errors;
 };
 
-const UserInfoPage = () => {
-    const navigate = useNavigate();
+const UserInfoPage = (props: Props) => {
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -54,7 +50,9 @@ const UserInfoPage = () => {
         },
         validate,
         onSubmit: values => {
-            navigate('/checkout/delivery');
+            // navigate('/checkout/delivery');
+            const userData: UserData = values;
+            props.savedUserData(userData);
         }
     });
 
