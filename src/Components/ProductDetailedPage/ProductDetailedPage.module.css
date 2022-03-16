@@ -46,6 +46,21 @@
     color: #656565;
 }
 
+.check-icon {
+    color: #936EFE;
+}
+
+.checkout-info {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: -1.5rem;
+}
+
+.checkout-info h4 {
+    color: #936EFE;
+}
+
 .buttons {
     display: flex;
     gap: 1rem;
