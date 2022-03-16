@@ -6,6 +6,7 @@ import classes from './ProductDetailedPage.module.css';
 import CartContext from '../../Store/CartContext';
 import DetailedProductAddBtn from './DetailedProductAddBtn';
 
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const ProductDetailedPage = () => {
@@ -40,6 +41,23 @@ const ProductDetailedPage = () => {
                         ut labore et dolore magna aliqua. Ut enim ad
                         minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex.</p>
+                </div>
+                <div className={classes['checkout-info-container']}>
+                    <div className={classes['checkout-info']}>
+                        <CheckCircleOutlineIcon className={classes['check-icon']} />
+                        <h4>Pay with Swish </h4>
+                        <span> - Choose swish at checkout</span>
+                    </div>
+                    <div className={classes['checkout-info']}>
+                        <CheckCircleOutlineIcon className={classes['check-icon']} />
+                        <h4>Free delivery </h4>
+                        <span> - Available at checkout</span>
+                    </div>
+                    <div className={classes['checkout-info']}>
+                        <CheckCircleOutlineIcon className={classes['check-icon']} />
+                        <h4>Free returns </h4>
+                        <span> - Always free</span>
+                    </div>
                 </div>
                 <div className={classes['buttons']}>
                     <button className={classes['size-btn']}>
