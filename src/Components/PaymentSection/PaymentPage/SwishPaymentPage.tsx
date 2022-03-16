@@ -59,6 +59,21 @@ const SwishPaymentPage = () => {
                     {formik.touched.phone && formik.errors.phone ? <div className={classes.error}>{formik.errors.phone}</div> : null}
                 </div>
 
+                <div className={classes['total-cost-container']}>
+                    <div className={classes['taxes-box' && 'cost-box']}>
+                        <span>taxes</span>
+                        <span>25%</span>
+                    </div>
+                    <div className={classes['shipping-box' && 'cost-box']}>
+                        <span>shipping</span>
+                        <span>49:-</span>
+                    </div>
+                    <div className={classes['total-cost-box' && 'cost-box']}>
+                        <h3>TOTAL</h3>
+                        <h3>2990:-</h3>
+                    </div>
+                </div>
+
                 <div className={classes['form-btn-container']}>
                     <button className={classes['exit-btn']}>EXIT</button>
                     <button className={classes['form-btn']} type="submit">
