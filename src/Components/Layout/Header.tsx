@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 
 import HamburgerMenu from "./HamburgerMenu";
 import HeaderCartButton from "./HeaderCartButton";
+import logo from '../../assets/images/logo-shoe.png';
 import classes from './Header.module.css';
 
 const Header = (props: { onShowCart: any; }) => {
@@ -10,6 +11,7 @@ const Header = (props: { onShowCart: any; }) => {
             <header className={classes.header}>
                 <div className={classes['header-item-container']}>
                 <HamburgerMenu />
+                <img src={logo} alt="" />
                 <HeaderCartButton onClick={props.onShowCart} />
                 </div>
             </header>
