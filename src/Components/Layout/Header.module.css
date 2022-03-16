@@ -11,7 +11,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 10;
   }
-
+  
   .header-item-container {
     width: 100%;
     margin: 1.1rem auto;
@@ -19,4 +19,17 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1250px;
+  }
+
+  .header-item-container img {
+    height: auto;
+    width: 120px;
+  }
+
+  @media (max-width: 420px) {
+    .header-item-container img {
+      padding-bottom: 1.5rem;
+      height: auto;
+      width: 160px;
+    }
   }
