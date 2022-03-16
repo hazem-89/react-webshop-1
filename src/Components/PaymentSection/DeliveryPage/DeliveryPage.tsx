@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
 import {useFormik} from 'formik';
-import { useNavigate } from 'react-router-dom';
 
 import classes from './DeliveryPage.module.css';
 
@@ -9,20 +8,20 @@ import instabox from '../../../assets/images/instabox.png';
 import budbee from '../../../assets/images/budbee.png';
 import postnord from '../../../assets/images/postnord.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { DeliveryData } from '../../../data';
 
-const DeliveryPage: React.FC = () => {
-    const navigate = useNavigate();
+interface Props {
+    savedDeliveryData: (deliveryData: DeliveryData) => void;
+}
+
+const DeliveryPage = (props: Props) => {
     const formik = useFormik({
         initialValues: {
             picked: '',
         },
         onSubmit: values => {
             const pickedValues = JSON.parse(values.picked);
-            if(pickedValues[0] === 'instabox' || pickedValues[0] === 'budbee' || pickedValues[0] === 'postnord') {
-                navigate('/checkout/payment')
-            } else {
-                return;
-            }
+            props.savedDeliveryData(pickedValues);
         }
     });
 
@@ -47,7 +46,11 @@ const DeliveryPage: React.FC = () => {
                         name="picked"
                         type="radio"
                         onChange={formik.handleChange}
-                        value={JSON.stringify(['instabox', '69', '1-2 days'])}
+                        value={JSON.stringify({
+                            delivery: 'instabox', 
+                            price: '69',
+                            time: '1-2 days',
+                        })}
                     />
                 </div>
 
@@ -62,7 +65,11 @@ const DeliveryPage: React.FC = () => {
                         name="picked"
                         type="radio"
                         onChange={formik.handleChange}
-                        value={JSON.stringify(['budbee', '0', '3-4 days'])}
+                        value={JSON.stringify({
+                            delivery: 'budbee', 
+                            price: '0',
+                            time: '3-4 days',
+                        })}
                     />
                 </div>
 
@@ -77,7 +84,11 @@ const DeliveryPage: React.FC = () => {
                         name="picked"
                         type="radio"
                         onChange={formik.handleChange}
-                        value={JSON.stringify(['postnord', '49', '2-3 days'])}
+                        value={JSON.stringify({
+                            delivery: 'postnord', 
+                            price: '49',
+                            time: '2-3 days',
+                        })}
                     />
                 </div>
             </div>

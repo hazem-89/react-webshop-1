@@ -6,9 +6,14 @@ import { Fragment } from "react";
 
 import progressbar3 from '../../../assets/images/progressbar-3.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { UserData } from '../../../data';
 
 interface FormValues {
     phone: string;
+}
+
+interface Props {
+    userData?: UserData;
 }
 
 const validate = (values: FormValues) => {
@@ -23,11 +28,11 @@ const validate = (values: FormValues) => {
     return errors;
 };
 
-const SwishPaymentPage = () => {
+const SwishPaymentPage = (props: Props) => {
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
-            phone: '',
+            phone: `${props.userData?.phone}` || '1234567890',
         },
         validate,
         onSubmit: values => {
@@ -57,6 +62,21 @@ const SwishPaymentPage = () => {
                         value={formik.values.phone}
                     />
                     {formik.touched.phone && formik.errors.phone ? <div className={classes.error}>{formik.errors.phone}</div> : null}
+                </div>
+
+                <div className={classes['total-cost-container']}>
+                    <div className={classes['taxes-box' && 'cost-box']}>
+                        <span>taxes</span>
+                        <span>25%</span>
+                    </div>
+                    <div className={classes['shipping-box' && 'cost-box']}>
+                        <span>shipping</span>
+                        <span>49:-</span>
+                    </div>
+                    <div className={classes['total-cost-box' && 'cost-box']}>
+                        <h3>TOTAL</h3>
+                        <h3>2990:-</h3>
+                    </div>
                 </div>
 
                 <div className={classes['form-btn-container']}>

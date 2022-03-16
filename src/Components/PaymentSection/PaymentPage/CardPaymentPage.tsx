@@ -2,15 +2,21 @@ import { useNavigate } from 'react-router-dom';
 import { FormikErrors, useFormik } from 'formik';
 
 import classes from './CardPaymentPage.module.css';
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 
 import progressbar3 from '../../../assets/images/progressbar-3.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { DeliveryData } from '../../../data';
+import CartContext from '../../../Store/CartContext';
 
 interface FormValues {
     cardnumber: string;
     expirationdate: string;
     securecode: string;
+}
+
+interface Props {
+    deliveryData?: DeliveryData;
 }
 
 const validate = (values: FormValues) => {
@@ -37,7 +43,12 @@ const validate = (values: FormValues) => {
     return errors;
 };
 
-const CardPaymentPage = () => {
+const CardPaymentPage = (props: Props) => {
+    const cartCtx = useContext(CartContext);
+
+    const totalAmount = `${cartCtx.totalAmount.toFixed(2)}:-`;
+    const shippingCost = `${props.deliveryData?.price}:-`;
+    
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
@@ -101,6 +112,21 @@ const CardPaymentPage = () => {
                             value={formik.values.securecode}
                         />
                         {formik.touched.securecode && formik.errors.securecode ? <div className={classes.error}>{formik.errors.securecode}</div> : null}
+                    </div>
+                </div>
+
+                <div className={classes['total-cost-container']}>
+                    <div className={classes['taxes-box' && 'cost-box']}>
+                        <span>taxes</span>
+                        <span>25%</span>
+                    </div>
+                    <div className={classes['shipping-box' && 'cost-box']}>
+                        <span>shipping</span>
+                        <span>{shippingCost}</span>
+                    </div>
+                    <div className={classes['total-cost-box' && 'cost-box']}>
+                        <h3>TOTAL</h3>
+                        <h3>{totalAmount}</h3>
                     </div>
                 </div>
 
