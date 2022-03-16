@@ -7,7 +7,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import classes from './Cart.module.css';
-import CartContext, { CartContextState } from '../../Store/CartContext';
+import CartContext from '../../Store/CartContext';
 import { Product } from '../../data';
 
 const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined; }) => {
