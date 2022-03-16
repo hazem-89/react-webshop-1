@@ -47,7 +47,7 @@ const CardPaymentPage = (props: Props) => {
     const cartCtx = useContext(CartContext);
     console.log(cartCtx);
 
-    const totalAmount = `${cartCtx.totalAmount.toFixed(2)}:-`;
+    const totalAmount = `${(cartCtx.totalAmount + Number(props.deliveryData?.price)).toFixed(2)}:-`;
     const shippingCost = `${props.deliveryData?.price}:-`;
     
     const navigate = useNavigate();
