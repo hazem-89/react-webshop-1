@@ -23,13 +23,15 @@
 
   .header-item-container img {
     height: auto;
-    width: 120px;
+    width: 140px;
+    padding-bottom: .2rem;
   }
 
   @media (max-width: 420px) {
     .header-item-container img {
-      padding-bottom: 1.5rem;
+      padding-bottom: 1.7rem;
       height: auto;
-      width: 160px;
+      width: 170px;
+      margin-right: .5rem;
     }
   }
