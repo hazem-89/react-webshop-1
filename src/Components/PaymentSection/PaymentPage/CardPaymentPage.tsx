@@ -8,6 +8,7 @@ import progressbar3 from '../../../assets/images/progressbar-3.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DeliveryData } from '../../../data';
 import CartContext from '../../../Store/CartContext';
+import { useKey } from '../../../Store/ConfirmationContext';
 
 interface FormValues {
     cardnumber: string;
@@ -44,8 +45,9 @@ const validate = (values: FormValues) => {
 };
 
 const CardPaymentPage = (props: Props) => {
+    const { confirm } = useKey();
+
     const cartCtx = useContext(CartContext);
-    console.log(cartCtx);
 
     const totalAmount = `${(cartCtx.totalAmount + Number(props.deliveryData?.price)).toFixed(2)}:-`;
     const shippingCost = `${props.deliveryData?.price}:-`;
@@ -59,6 +61,7 @@ const CardPaymentPage = (props: Props) => {
         },
         validate,
         onSubmit: values => {
+            confirm();
             navigate('/checkout/confirmation');
         }
     });

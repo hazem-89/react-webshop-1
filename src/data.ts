@@ -19,3 +19,7 @@ export interface DeliveryData {
     price: string;
     time: string;
 }
+
+export interface OrderKey {
+    key: number;
+}

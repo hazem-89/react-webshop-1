@@ -34,6 +34,10 @@
     margin-bottom: 0rem;
 }
 
+.ordernumber {
+    font-weight: 600;
+}
+
 .btn-container {
     width: 100%;
     max-width: 550px;

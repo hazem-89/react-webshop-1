@@ -14,6 +14,7 @@ import PaymentPage from "./Components/PaymentSection/PaymentPage/PaymentPage";
 import ConfirmationPage from "./Components/PaymentSection/ConfirmationPage/ConfirmationPage";
 import CardPaymentPage from "./Components/PaymentSection/PaymentPage/CardPaymentPage";
 import SwishPaymentPage from "./Components/PaymentSection/PaymentPage/SwishPaymentPage";
+import KeyProvider from "./Store/ConfirmationContext";
 
 function App() {
   const navigate = useNavigate();
@@ -49,30 +50,32 @@ function App() {
 
   return (
     <CartProvider>
-      <Routes>
-        <Route path="/" element={
-          <Fragment>
-            {isCartOpen && <Cart onClose={hideCartHandler} />}
-            <Header onShowCart={showCartHandler} />
-            <main>
-              <Products />
-            </main>
-          </Fragment>
-        } />
-        <Route path=":productId" element={
-          <Fragment>
-            {isCartOpen && <Cart onClose={hideCartHandler} />}
-            <Header onShowCart={showCartHandler} />
-            <ProductDetailedPage />
-          </Fragment>
-        } />
-        <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />
-        <Route path="checkout/delivery" element={<DeliveryPage savedDeliveryData={deliveryDataHandler} />} />
-        <Route path="checkout/payment" element={<PaymentPage />} />
-        <Route path="checkout/payment/card" element={<CardPaymentPage deliveryData={deliveryData} />} />
-        <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} />} />
-        <Route path="checkout/confirmation" element={<ConfirmationPage />} />
-      </Routes>
+      <KeyProvider>
+        <Routes>
+          <Route path="/" element={
+            <Fragment>
+              {isCartOpen && <Cart onClose={hideCartHandler} />}
+              <Header onShowCart={showCartHandler} />
+              <main>
+                <Products />
+              </main>
+            </Fragment>
+          } />
+          <Route path=":productId" element={
+            <Fragment>
+              {isCartOpen && <Cart onClose={hideCartHandler} />}
+              <Header onShowCart={showCartHandler} />
+              <ProductDetailedPage />
+            </Fragment>
+          } />
+          <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />
+          <Route path="checkout/delivery" element={<DeliveryPage savedDeliveryData={deliveryDataHandler} />} />
+          <Route path="checkout/payment" element={<PaymentPage />} />
+            <Route path="checkout/payment/card" element={<CardPaymentPage deliveryData={deliveryData} />} />
+            <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} />} />
+            <Route path="checkout/confirmation" element={<ConfirmationPage />} />
+        </Routes>
+      </KeyProvider>
     </CartProvider>
   );
 }
