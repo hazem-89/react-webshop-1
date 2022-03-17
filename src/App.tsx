@@ -74,9 +74,9 @@ function App() {
           <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />
           <Route path="checkout/delivery" element={<DeliveryPage savedDeliveryData={deliveryDataHandler} />} />
           <Route path="checkout/payment" element={<PaymentPage />} />
-            <Route path="checkout/payment/card" element={<CardPaymentPage deliveryData={deliveryData} />} />
-            <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} />} />
-            <Route path="checkout/confirmation" element={<ConfirmationPage />} />
+          <Route path="checkout/payment/card" element={<CardPaymentPage deliveryData={deliveryData} />} />
+          <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} deliveryData={deliveryData} />} />
+          <Route path="checkout/confirmation" element={<ConfirmationPage />} />
         </Routes>
       </KeyProvider>
     </CartProvider>

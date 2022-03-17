@@ -2,17 +2,20 @@ import { useNavigate } from 'react-router-dom';
 import {FormikErrors, useFormik} from 'formik';
 
 import classes from './SwishPaymentPage.module.css';
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 
 import progressbar3 from '../../../assets/images/progressbar-3.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { UserData } from '../../../data';
+import { DeliveryData, UserData } from '../../../data';
+import CartContext from '../../../Store/CartContext';
+import { useKey } from '../../../Store/ConfirmationContext';
 
 interface FormValues {
     phone: string;
 }
 
 interface Props {
+    deliveryData?: DeliveryData;
     userData?: UserData;
 }
 
@@ -29,13 +32,21 @@ const validate = (values: FormValues) => {
 };
 
 const SwishPaymentPage = (props: Props) => {
+    const { confirm } = useKey();
+    
+    const cartCtx = useContext(CartContext);
+
+    const totalAmount = `${(cartCtx.totalAmount + Number(props.deliveryData?.price)).toFixed(2)}:-`;
+    const shippingCost = `${props.deliveryData?.price}:-`;
+    
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
-            phone: `${props.userData?.phone}` || '1234567890',
+            phone: `${props.userData?.phone}` || '',
         },
         validate,
         onSubmit: values => {
+            confirm();
             navigate('/checkout/confirmation');
         }
     });
@@ -71,19 +82,19 @@ const SwishPaymentPage = (props: Props) => {
                     </div>
                     <div className={classes['shipping-box' && 'cost-box']}>
                         <span>shipping</span>
-                        <span>49:-</span>
+                        <span>{shippingCost}</span>
                     </div>
                     <div className={classes['total-cost-box' && 'cost-box']}>
                         <h3>TOTAL</h3>
-                        <h3>2990:-</h3>
+                        <h3>{totalAmount}</h3>
                     </div>
                 </div>
 
                 <div className={classes['form-btn-container']}>
-                    <button className={classes['exit-btn']}>EXIT</button>
+                    <button type='button' className={classes['exit-btn']} onClick={() => navigate(-1)}>BACK</button>
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
-                            <span>DELIVERY</span>
+                            <span>CONFIRM ORDER</span>
                             <ArrowForwardIosIcon style={{fontSize: 20}}/>
                         </div>
                     </button>
