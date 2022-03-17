@@ -25,13 +25,13 @@ const validate = (values: FormValues) => {
 
     if (!values.cardnumber) {
         errors.cardnumber = 'Required';
-    } else if (values.cardnumber.length > 16 || values.cardnumber.length < 16) {
+    } else if (values.cardnumber.length > 19 || values.cardnumber.length < 19) {
         errors.cardnumber = 'Must be 16 characters. Ex: xxxx xxxx xxxx xxxx';
     }
 
     if (!values.expirationdate) {
         errors.expirationdate = 'Required';
-    } else if (values.expirationdate.length > 4 || values.expirationdate.length < 4) {
+    } else if (values.expirationdate.length > 7 || values.expirationdate.length < 7) {
         errors.expirationdate = 'Must be 4 characters. Ex: xx/xx';
     }
 
@@ -86,7 +86,7 @@ const CardPaymentPage = (props: Props) => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.cardnumber
-                            .replace(/\s/g, " ")
+                            .replace(/\s/g, "")
                             .replace(/(\d{4})/g, "$1 ")
                             .trim()}
                     />
@@ -103,10 +103,7 @@ const CardPaymentPage = (props: Props) => {
                             placeholder='01/21'
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.expirationdate
-                                .replace(/\s/g,"/ ")
-                                .replace(/(\d{2})/g, "$1 ")
-                                .trim()}
+                            value={formik.values.expirationdate}
                         />
                         {formik.touched.expirationdate && formik.errors.expirationdate ? <div className={classes.error}>{formik.errors.expirationdate}</div> : null}
                     </div>
