@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CartProvider from "./Store/cart-provider";
@@ -29,17 +30,22 @@ function App() {
 
   const userDataHandler = (savedUserData: UserData) => {
     setUserData(savedUserData);
-    console.log(userData);
-    if(!userData) return;
-    navigate('/checkout/delivery');
   }
 
   const deliveryDataHandler = (savedDeliveryData: DeliveryData) => {
     setDeliveryData(savedDeliveryData);
-    console.log(deliveryData);
+  }
+
+  useEffect(() => {
+    if(!userData) return;
+    navigate('/checkout/delivery');
+  }, [userData]);
+  
+  useEffect(() => {
     if(!deliveryData) return;
     navigate('/checkout/payment');
-  }
+  }, [deliveryData]);
+
 
   return (
     <CartProvider>
@@ -63,47 +69,13 @@ function App() {
         <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />
         <Route path="checkout/delivery" element={<DeliveryPage savedDeliveryData={deliveryDataHandler} />} />
         <Route path="checkout/payment" element={<PaymentPage />} />
-        <Route path="checkout/payment/card" element={
-            <CardPaymentPage deliveryData={deliveryData} />
-        } />
+        <Route path="checkout/payment/card" element={<CardPaymentPage deliveryData={deliveryData} />} />
         <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} />} />
         <Route path="checkout/confirmation" element={<ConfirmationPage />} />
       </Routes>
     </CartProvider>
   );
 }
-
-//   return (
-//     <Routes>
-//       <Route path="/" element={
-//         <CartProvider>
-//           {isCartOpen && <Cart onClose={hideCartHandler} />}
-//           <Header onShowCart={showCartHandler} />
-//           <main>
-//             <Products />
-//           </main>
-//         </CartProvider>
-//       } />
-//       <Route path=":productId" element={
-//         <CartProvider>
-//           {isCartOpen && <Cart onClose={hideCartHandler} />}
-//           <Header onShowCart={showCartHandler} />
-//           <ProductDetailedPage />
-//         </CartProvider>
-//       } />
-//       <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />
-//       <Route path="checkout/delivery" element={<DeliveryPage savedDeliveryData={deliveryDataHandler} />} />
-//       <Route path="checkout/payment" element={<PaymentPage />} />
-//       <Route path="checkout/payment/card" element={
-//         <CartProvider>
-//           <CardPaymentPage deliveryData={deliveryData} />
-//         </CartProvider>
-//       } />
-//       <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} />} />
-//       <Route path="checkout/confirmation" element={<ConfirmationPage />} />
-//     </Routes>
-//   );
-// }
 
 export default App;
 
