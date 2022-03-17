@@ -85,7 +85,10 @@ const CardPaymentPage = (props: Props) => {
                         placeholder='**** **** **** ****'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.cardnumber}
+                        value={formik.values.cardnumber
+                            .replace(/\s/g, " ")
+                            .replace(/(\d{4})/g, "$1 ")
+                            .trim()}
                     />
                     {formik.touched.cardnumber && formik.errors.cardnumber ? <div className={classes.error}>{formik.errors.cardnumber}</div> : null}
                 </div>
@@ -100,7 +103,10 @@ const CardPaymentPage = (props: Props) => {
                             placeholder='01/21'
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.expirationdate}
+                            value={formik.values.expirationdate
+                                .replace(/\s/g,"/ ")
+                                .replace(/(\d{2})/g, "$1 ")
+                                .trim()}
                         />
                         {formik.touched.expirationdate && formik.errors.expirationdate ? <div className={classes.error}>{formik.errors.expirationdate}</div> : null}
                     </div>
