@@ -15,6 +15,7 @@ import ConfirmationPage from "./Components/PaymentSection/ConfirmationPage/Confi
 import CardPaymentPage from "./Components/PaymentSection/PaymentPage/CardPaymentPage";
 import SwishPaymentPage from "./Components/PaymentSection/PaymentPage/SwishPaymentPage";
 import KeyProvider from "./Store/ConfirmationContext";
+import Footer from './Components/Layout/Footer';
 
 function App() {
   const navigate = useNavigate();
@@ -59,6 +60,7 @@ function App() {
               <main>
                 <Products />
               </main>
+              <Footer />
             </Fragment>
           } />
           <Route path=":productId" element={
@@ -66,6 +68,7 @@ function App() {
               {isCartOpen && <Cart onClose={hideCartHandler} />}
               <Header onShowCart={showCartHandler} />
               <ProductDetailedPage />
+              <Footer />
             </Fragment>
           } />
           <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />

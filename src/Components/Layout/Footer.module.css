@@ -1,0 +1,88 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rem;
+    margin-top: 5rem;
+    background-color: #333;
+    color: #fafafa;
+    gap: 6rem;
+}
+
+.footer-item-container {
+    width: 100%;
+    margin: 1.1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1250px;
+  }
+
+.brand-container img {
+    width: 180px;
+    height: auto;
+}
+
+.brand-info-container {
+    max-width: 32rem;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.footer-links-container {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.footer-item-devider {
+    border-bottom: 1px solid #636363;
+    height: 1px;
+    width: 100%;
+    max-width: 1250px;
+}
+
+.social-media-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.instagram-icon,
+.youtube-icon,
+.facebook-icon {
+    font-size: 36px;
+}
+
+.link-separator {
+    border-right: 1px solid #636363;
+    height: 2rem;
+    width: 1px;
+}
+
+@media (max-width: 890px) {
+    .footer {
+        padding: 4rem;
+        gap: 4rem;
+    }
+
+    .footer-item-container {
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+    .footer-links-container {
+        gap: 2.5rem;
+        flex-direction: column;
+    }
+
+    .link-separator {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand-container img {
+        padding-bottom: 2rem;
+    }
+}
