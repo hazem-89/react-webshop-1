@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CartProvider from "./Store/cart-provider";
@@ -75,38 +76,6 @@ function App() {
     </CartProvider>
   );
 }
-
-//   return (
-//     <Routes>
-//       <Route path="/" element={
-//         <CartProvider>
-//           {isCartOpen && <Cart onClose={hideCartHandler} />}
-//           <Header onShowCart={showCartHandler} />
-//           <main>
-//             <Products />
-//           </main>
-//         </CartProvider>
-//       } />
-//       <Route path=":productId" element={
-//         <CartProvider>
-//           {isCartOpen && <Cart onClose={hideCartHandler} />}
-//           <Header onShowCart={showCartHandler} />
-//           <ProductDetailedPage />
-//         </CartProvider>
-//       } />
-//       <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />
-//       <Route path="checkout/delivery" element={<DeliveryPage savedDeliveryData={deliveryDataHandler} />} />
-//       <Route path="checkout/payment" element={<PaymentPage />} />
-//       <Route path="checkout/payment/card" element={
-//         <CartProvider>
-//           <CardPaymentPage deliveryData={deliveryData} />
-//         </CartProvider>
-//       } />
-//       <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} />} />
-//       <Route path="checkout/confirmation" element={<ConfirmationPage />} />
-//     </Routes>
-//   );
-// }
 
 export default App;
 
