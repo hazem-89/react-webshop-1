@@ -2,10 +2,17 @@ import { useKey } from '../../../Store/ConfirmationContext';
 
 import progressbar4 from '../../../assets/images/progressbar-4.png';
 import classes from './ConfirmationPage.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const ConfirmationPage = () => {
+    const navigate = useNavigate()
+
     const { key } = useKey();
     if(!key) return null;
+
+    function refreshPage() {
+        navigate('/');
+      }
 
     return(
         <div className={classes['checkout-confirmation-container']}>
@@ -19,7 +26,7 @@ const ConfirmationPage = () => {
                 <span>Thanks for buying from us!</span>
             </div>
             <div className={classes['btn-container']}>
-                <button className={classes['confirmation-btn']}>BACK TO HOMEPAGE</button>
+                <button className={classes['confirmation-btn']} onClick={refreshPage}>BACK TO HOMEPAGE</button>
             </div>
         </div>
     );
