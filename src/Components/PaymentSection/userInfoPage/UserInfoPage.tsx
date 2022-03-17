@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import {FormikErrors, useFormik} from 'formik';
+import { useNavigate } from "react-router-dom";
 
 import classes from './UserInfoPage.module.css';
 import { Fragment } from "react";
@@ -41,6 +42,8 @@ const validate = (values: UserData) => {
 };
 
 const UserInfoPage = (props: Props) => {
+    const navigate = useNavigate();
+
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -118,7 +121,7 @@ const UserInfoPage = (props: Props) => {
                 </div>
 
                 <div className={classes['form-btn-container']}>
-                    <button className={classes['exit-btn']}>EXIT</button>
+                    <button className={classes['exit-btn']} onClick={() => navigate(-1)}>EXIT</button>
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
                             <span>DELIVERY</span>

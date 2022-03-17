@@ -50,7 +50,7 @@ const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined
             </div>
             <button className={classes['btn--close']} onClick={props.onClose}><CloseIcon /></button>
             <Link to='/checkout/user-info'>
-                {hasItems && <button className={classes['btn--order']}>
+                {hasItems && <button className={classes['btn--order']} onClick={props.onClose}>
                     <div className={classes['button-text-separator']}>
                         <span>CHECKOUT</span>
                         <ArrowForwardIosIcon style={{ fontSize: 20 }} />

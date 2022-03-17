@@ -9,12 +9,14 @@ import budbee from '../../../assets/images/budbee.png';
 import postnord from '../../../assets/images/postnord.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DeliveryData } from '../../../data';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
     savedDeliveryData: (deliveryData: DeliveryData) => void;
 }
 
 const DeliveryPage = (props: Props) => {
+    const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
             picked: '',
@@ -94,7 +96,7 @@ const DeliveryPage = (props: Props) => {
             </div>
 
             <div className={classes['form-btn-container']}>
-                <button className={classes['exit-btn']}>EXIT</button>
+                <button className={classes['exit-btn']} onClick={() => navigate(-1)}>BACK</button>
                 <button className={classes['form-btn']} type="submit">
                     <div className={classes['btn-text-separator']}>
                         <span>DELIVERY</span>
