@@ -20,9 +20,9 @@ const Footer = () => {
                         laboris.</span>
                 </div>
                 <div className={classes['social-media-container']}>
-                    <InstagramIcon className={classes['instagram-icon']} />
-                    <YouTubeIcon className={classes['youtube-icon']} />
-                    <FacebookIcon className={classes['facebook-icon']} />
+                    <InstagramIcon style={{fontSize: 36}} />
+                    <YouTubeIcon style={{fontSize: 36}} />
+                    <FacebookIcon style={{fontSize: 36}} />
                 </div>
             </div>
             <div className={classes['footer-item-devider']}></div>
