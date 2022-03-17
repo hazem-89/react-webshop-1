@@ -53,7 +53,6 @@ const UserInfoPage = (props: Props) => {
         },
         validate,
         onSubmit: values => {
-            // navigate('/checkout/delivery');
             const userData: UserData = values;
             props.savedUserData(userData);
         }
@@ -74,6 +73,7 @@ const UserInfoPage = (props: Props) => {
                         id="name"
                         name="name"
                         type="name"
+                        placeholder="Freddie Kakowski"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.name}
@@ -87,6 +87,7 @@ const UserInfoPage = (props: Props) => {
                         id="email"
                         name="email"
                         type="email"
+                        placeholder="Freddie@example.com"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.email}
@@ -100,6 +101,7 @@ const UserInfoPage = (props: Props) => {
                         id="phone"
                         name="phone"
                         type="phone"
+                        placeholder="1234567890"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.phone}
@@ -113,6 +115,7 @@ const UserInfoPage = (props: Props) => {
                         id="adress"
                         name="adress"
                         type="adress"
+                        placeholder="FreddieStreet 12B"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.adress}

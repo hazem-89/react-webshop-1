@@ -17,12 +17,9 @@ const PaymentPage = () => {
             picked: '',
         },
         onSubmit: values => {
-            console.log(values);
             if (values.picked === 'mastercard' || values.picked === 'visa') {
-                console.log('mastercard or visa')
                 navigate('/checkout/payment/card')
             } else if (values.picked === 'swish') {
-                console.log('swish')
                 navigate('/checkout/payment/swish')
             } else {
                 return;
@@ -75,7 +72,7 @@ const PaymentPage = () => {
                 </div>
 
                 <div className={classes['form-btn-container']}>
-                    <button className={classes['exit-btn']} onClick={() => navigate(-1)}>BACK</button>
+                    <button type='button' className={classes['exit-btn']} onClick={() => navigate(-1)}>BACK</button>
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
                             <span>PAYMENT</span>

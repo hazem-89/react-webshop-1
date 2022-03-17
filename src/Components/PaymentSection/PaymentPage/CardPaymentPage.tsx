@@ -135,10 +135,10 @@ const CardPaymentPage = (props: Props) => {
                 </div>
 
                 <div className={classes['form-btn-container']}>
-                    <button className={classes['exit-btn']}>EXIT</button>
+                    <button className={classes['exit-btn']} onClick={() => navigate(-1)}>BACK</button>
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
-                            <span>DELIVERY</span>
+                            <span>CONFIRM ORDER</span>
                             <ArrowForwardIosIcon style={{ fontSize: 20 }} />
                         </div>
                     </button>
