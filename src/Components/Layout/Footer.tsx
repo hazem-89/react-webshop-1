@@ -1,9 +1,12 @@
+
 import classes from './Footer.module.css';
 import logoFooter from '../../assets/images/Group 39.png';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import AdminPage from '../Admin/AdminPage';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return(
@@ -31,7 +34,7 @@ const Footer = () => {
                 <span className={classes['link-separator']}></span>
                 <span>User</span>
                 <span className={classes['link-separator']}></span>
-                <span>Admin</span>
+                <Link to={'/login'}><span style={{color: '#fafafa'}}>Admin</span></Link>
                 <span className={classes['link-separator']}></span>
                 <span>About</span>
                 <span className={classes['link-separator']}></span>

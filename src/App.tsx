@@ -16,6 +16,8 @@ import CardPaymentPage from "./Components/PaymentSection/PaymentPage/CardPayment
 import SwishPaymentPage from "./Components/PaymentSection/PaymentPage/SwishPaymentPage";
 import KeyProvider from "./Store/ConfirmationContext";
 import Footer from './Components/Layout/Footer';
+import Login from "./Components/Admin/Login";
+import AdminPage from "./Components/Admin/AdminPage";
 
 function App() {
   const navigate = useNavigate();
@@ -77,6 +79,8 @@ function App() {
           <Route path="checkout/payment/card" element={<CardPaymentPage deliveryData={deliveryData} />} />
           <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} deliveryData={deliveryData} />} />
           <Route path="checkout/confirmation" element={<ConfirmationPage />} />
+          <Route path="login" element={<Login />} />
+          <Route path="admin" element={<AdminPage />} />
         </Routes>
       </KeyProvider>
     </CartProvider>

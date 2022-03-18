@@ -23,3 +23,8 @@ export interface DeliveryData {
 export interface OrderKey {
     key: number;
 }
+
+export interface AdminUser {
+    adminName: string;
+    adminPassword: string;
+}
