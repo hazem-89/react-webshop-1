@@ -2,41 +2,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100vh;
-    padding: 10%;
-    padding-bottom: 25%;
+    padding: 5% 10%;
 }
 
 .admin-title {
     width: 100%;
-    max-width: 1050px;
+    max-width: 490px;
     margin-left: 3rem;
     font-size: 2rem;
+    margin-top: 6rem;
 }
 
 .form-container {
+    position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     background-color: white;
     width: 100%;
-    max-width: 1050px;
+    height: 100%;
+    max-width: 550px;
     padding: 3rem;
     border-radius: 10px;
     gap: 3rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.image-container img {
-    height: auto;
-    width: 350px;
-}
-
-.image-container img:hover {
-    transform: scale(101%);
-    transition: 150ms;
-    cursor: pointer;
+.image-container {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    padding: .3rem;
+    max-width: 200px;
+    font-size: 1.1rem;
+    color: #936EFE;
+    font-weight: bold;
+    height: 100%;
 }
 
 .input-container {
@@ -44,7 +47,7 @@
     flex-direction: column;
     width: 100%;
     max-width: 450px;
-    gap: .5rem;
+    gap: .8rem;
 }
 
 .input-item {
@@ -89,6 +92,17 @@ textarea {
     gap: .5rem;
 }
 
+.form-btn-container {
+    position: absolute;
+    width: 100%;
+    max-width: 550px;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 2rem;
+    padding: 0 3rem;
+}
+
 .form-btn {
     width: 100%;
     font-size: 1rem;
@@ -97,25 +111,33 @@ textarea {
     border: none;
     border-radius: 6px;
     padding: 1rem 1.2rem;
-    margin-top: 3rem;
 }
 
-@media (max-width: 1000px) {
-    .form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        padding: 10%;
-    }
+.form-btn:hover {
+  background-color: #936EFE;
+  transform: scale(103%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: 150ms;
+  cursor: pointer;
+}
 
+.form-btn:active {
+  transform: translate(0, .05rem);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+}
+
+@media (max-width: 430px) {
     .form-container {
-        flex-direction: column;
+        padding: 0;
+        box-shadow:none;
     }
 
-    .image-container img {
-        width: 100%;
-        max-width: 300px;
+    .admin-title {
+        margin-left: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .form-btn-container {
+        padding: 0;
     }
 }

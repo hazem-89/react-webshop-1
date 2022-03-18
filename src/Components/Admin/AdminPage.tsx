@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import classes from './AdminPage.module.css';
-import image from '../../assets/images/Group 40.png';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import { useFormik } from "formik";
+import AdminHeader from "./AdminHeader";
 
 const AdminPage = () => {
     const formik = useFormik({
@@ -19,12 +20,10 @@ const AdminPage = () => {
     
     return(
         <Fragment>
+            <AdminHeader />
             <form className={classes['form']}>
                 <h2 className={classes['admin-title']}>Add new product</h2>
                 <div className={classes['form-container']}>
-                    <div className={classes['image-container']}>
-                        <img src={image} alt="" />
-                    </div>
                     <div className={classes['input-container']}>
                         <div className={classes['title-input-container' && 'input-item']}>
                             <label htmlFor="title">Title</label>
@@ -89,6 +88,13 @@ const AdminPage = () => {
                                 value={formik.values.description}
                             />
                             {formik.touched.description && formik.errors.description ? <div className={classes.error}>{formik.errors.description}</div> : null}
+                        </div>
+
+                        <div className={classes['image-container']}>
+                            <div className={classes.img}>
+                                <AddPhotoAlternateIcon style={{fontSize: 40}} />
+                            </div>
+                            <span>Add Image</span>
                         </div>
 
                         <div className={classes['form-btn-container']}>
