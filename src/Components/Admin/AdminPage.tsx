@@ -1,27 +1,66 @@
 import { Fragment } from "react";
 import classes from './AdminPage.module.css';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
-import { useFormik } from "formik";
+import { FormikErrors, useFormik } from "formik";
 import AdminHeader from "./AdminHeader";
+// import { Product } from "../../data";
+
+const validate = (values: any /*Product*/) => {
+    const errors: FormikErrors<any/*Product*/> = {};
+ 
+    if (!values.title) {
+      errors.title = 'Required';
+    } else if (values.title.length > 15 || values.title.length < 2) {
+      errors.title = 'Must be between 2 and 15 characters';
+    }
+
+    if (!values.brand) {
+        errors.brand = 'Required';
+      } else if (values.brand.length > 15 || values.brand.length < 2) {
+        errors.brand = 'Must be between 2 and 15 characters';
+      }
+
+    if (!values.price) {
+    errors.price = 'Required';
+    } else if (values.brand.length < 2) {
+    errors.brand = 'Must be between atleast 2 characters';
+    }
+
+    if (!values.size) {
+        errors.size = 'Required';
+    }
+    
+    if (!values.description) {
+        errors.description = 'Required';
+    }
+
+    if (!values.image) {
+        errors.image = 'Required';
+    }
+    
+    return errors;
+};
 
 const AdminPage = () => {
     const formik = useFormik({
         initialValues: {
             title: '',
             brand: '',
-            price: '',
+            price: 0,
             size: '',
             description: '',
+            image: '',
         },
+        validate,
         onSubmit: values => {
-
+            console.log(values);
         }
     });
     
     return(
         <Fragment>
             <AdminHeader />
-            <form className={classes['form']}>
+            <form className={classes['form']} onSubmit={formik.handleSubmit}>
                 <h2 className={classes['admin-title']}>Add new product</h2>
                 <div className={classes['form-container']}>
                     <div className={classes['input-container']}>
@@ -91,10 +130,18 @@ const AdminPage = () => {
                         </div>
 
                         <div className={classes['image-container']}>
-                            <div className={classes.img}>
-                                <AddPhotoAlternateIcon style={{fontSize: 40}} />
-                            </div>
-                            <span>Add Image</span>
+                            <label htmlFor="image" className={classes['image-file']}>
+                                + Add Image
+                            <input
+                                id="image"
+                                name="image"
+                                type="file"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.image}
+                            />
+                            </label>
+                            {formik.touched.image && formik.errors.image ? <div className={classes.error}>{formik.errors.image}</div> : null}
                         </div>
 
                         <div className={classes['form-btn-container']}>
