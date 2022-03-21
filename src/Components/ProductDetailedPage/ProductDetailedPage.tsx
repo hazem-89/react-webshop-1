@@ -19,10 +19,11 @@ const ProductDetailedPage = () => {
         cartCtx.addItem({
             id: product!.id,
             name: product!.name,
+            brand: product!.brand,
             amount: amount,
             price: product!.price,
             image: product!.image,
-            description: '',
+            description: product!.description,
         });
     };
 
@@ -32,15 +33,11 @@ const ProductDetailedPage = () => {
             <div className={classes['info-container']}>
                 <div className={classes['info-text']}>
                     <h2>{product!.name}</h2>
-                    <p>{product!.description}</p>
+                    <p>{product!.brand}</p>
                     <p>{product!.price}:-</p>
                 </div>
                 <div className={classes['info-desc']}>
-                    <p>Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex.</p>
+                    <p>{product!.description}</p>
                 </div>
                 <div className={classes['checkout-info-container']}>
                     <div className={classes['checkout-info']}>

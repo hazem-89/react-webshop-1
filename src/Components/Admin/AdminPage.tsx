@@ -8,10 +8,10 @@ import AdminHeader from "./AdminHeader";
 const validate = (values: any /*Product*/) => {
     const errors: FormikErrors<any/*Product*/> = {};
  
-    if (!values.title) {
-      errors.title = 'Required';
-    } else if (values.title.length > 15 || values.title.length < 2) {
-      errors.title = 'Must be between 2 and 15 characters';
+    if (!values.name) {
+      errors.name = 'Required';
+    } else if (values.name.length > 15 || values.name.length < 2) {
+      errors.name = 'Must be between 2 and 15 characters';
     }
 
     if (!values.brand) {
@@ -44,7 +44,7 @@ const validate = (values: any /*Product*/) => {
 const AdminPage = () => {
     const formik = useFormik({
         initialValues: {
-            title: '',
+            name: '',
             brand: '',
             price: 0,
             size: '',
@@ -65,16 +65,16 @@ const AdminPage = () => {
                 <div className={classes['form-container']}>
                     <div className={classes['input-container']}>
                         <div className={classes['title-input-container' && 'input-item']}>
-                            <label htmlFor="title">Title</label>
+                            <label htmlFor="name">Title</label>
                             <input
-                                id="title"
-                                name="title"
-                                type="title"
+                                id="name"
+                                name="name"
+                                type="name"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                value={formik.values.title}
+                                value={formik.values.name}
                             />
-                            {formik.touched.title && formik.errors.title ? <div className={classes.error}>{formik.errors.title}</div> : null}
+                            {formik.touched.name && formik.errors.name ? <div className={classes.error}>{formik.errors.name}</div> : null}
                         </div>
 
                         <div className={classes['brand-input-container' && 'input-item']}>

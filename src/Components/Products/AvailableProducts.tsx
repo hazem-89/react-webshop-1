@@ -15,63 +15,108 @@ export const DUMMY_PRODUCTS = [
     {
       id: 'p1',
       name: 'Chunky sneakers',
-      description: 'New Balance',
+      brand: 'New Balance',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 799,
       image: img1,
     },
     {
       id: 'p2',
       name: 'Soft sneakers',
-      description: 'Vans',
+      brand: 'Vans',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 499,
       image: img2,
     },
     {
       id: 'p3',
       name: 'Streeter Vol. Max',
-      description: 'Nikitoe',
+      brand: 'Nikitoe',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 699,
       image: img3,
     },
     {
       id: 'p4',
       name: 'Exo black No.2',
-      description: 'RefuseeX',
+      brand: 'Reuse',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 999,
       image: img4,
     },
     {
       id: 'p5',
       name: 'BlendIn sneakers',
-      description: 'Finest shoemaker',
+      brand: 'Vans',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 1099,
       image: img5,
     },
     {
       id: 'p6',
       name: 'Red hot chilli',
-      description: 'Trexxi',
+      brand: 'New Balance',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 899,
       image: img6,
     },
     {
       id: 'p7',
       name: 'HikerMax pro',
-      description: 'AmericanShoe',
+      brand: 'Americano',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 1299,
       image: img7,
     },
     {
       id: 'p8',
       name: 'SpeedUp',
-      description: 'New Balance',
+      brand: 'New Balance',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 1099,
       image: img8,
     },
     {
       id: 'p9',
       name: 'balance',
-      description: 'Xesior',
+      brand: 'Vans',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
       price: 699,
       image: img9,
     },
@@ -84,6 +129,7 @@ const AvailableProducts = () => {
                 key={product.id}
                 id={product.id}
                 name={product.name}
+                brand={product.brand}
                 description={product.description}
                 price={product.price}
                 image={product.image} 
