@@ -13,7 +13,7 @@ import { Product } from '../../data';
 const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined; }) => {
     const cartCtx = useContext(CartContext);
 
-    const totalAmount = `${cartCtx.totalAmount.toFixed(2)}:-`;
+    const totalAmount = `${cartCtx.totalAmount},00:-`;
     const hasItems = cartCtx.items.length > 0;
 
     const cartItemRemoveHandler = (id: string) => {

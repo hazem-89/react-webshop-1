@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useParams } from "react-router-dom"
-import { DUMMY_PRODUCTS } from "../Products/AvailableProducts";
+import products from "../../App";
 
 import classes from './ProductDetailedPage.module.css';
 import CartContext from '../../Store/CartContext';
@@ -8,10 +8,15 @@ import DetailedProductAddBtn from './DetailedProductAddBtn';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Product } from '../../data';
 
-const ProductDetailedPage = () => {
+interface Props {
+    products: Product[];
+}
+
+const ProductDetailedPage = (props: Props) => {
     const { productId } = useParams()
-    const product = DUMMY_PRODUCTS.find(prod => prod.id === productId)
+    const product = props.products.find((prod: Product) => prod.id === productId);
 
     const cartCtx = useContext(CartContext);
 
@@ -19,10 +24,11 @@ const ProductDetailedPage = () => {
         cartCtx.addItem({
             id: product!.id,
             name: product!.name,
+            brand: product!.brand,
             amount: amount,
             price: product!.price,
             image: product!.image,
-            description: '',
+            description: product!.description,
         });
     };
 
@@ -32,15 +38,11 @@ const ProductDetailedPage = () => {
             <div className={classes['info-container']}>
                 <div className={classes['info-text']}>
                     <h2>{product!.name}</h2>
-                    <p>{product!.description}</p>
+                    <p>{product!.brand}</p>
                     <p>{product!.price}:-</p>
                 </div>
                 <div className={classes['info-desc']}>
-                    <p>Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex.</p>
+                    <p>{product!.description}</p>
                 </div>
                 <div className={classes['checkout-info-container']}>
                     <div className={classes['checkout-info']}>

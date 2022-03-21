@@ -2,7 +2,7 @@ import { ReactChild, ReactFragment, ReactPortal, MouseEventHandler } from 'react
 import classes from './CartItem.module.css';
 
 const CartItem = (props: { price: number; image: string | undefined; name: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; amount: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; onRemove: MouseEventHandler<HTMLButtonElement> | undefined; onAdd: MouseEventHandler<HTMLButtonElement> | undefined; }) => {
-  const price = `${props.price.toFixed(2)}:-`;
+  const price = `${props.price},00:-`;
 
   return (
     <li className={classes['cart-item']}>

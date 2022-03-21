@@ -1,17 +1,20 @@
-import { Fragment } from "react";
+import { Fragment} from "react";
 import classes from './AdminPage.module.css';
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import { FormikErrors, useFormik } from "formik";
 import AdminHeader from "./AdminHeader";
-// import { Product } from "../../data";
+import { Product } from "../../data";
 
-const validate = (values: any /*Product*/) => {
-    const errors: FormikErrors<any/*Product*/> = {};
+interface Props {
+    savedNewProductData: (deliveryData: Product) => void;
+}
+
+const validate = (values: Product) => {
+    const errors: FormikErrors<Product> = {};
  
-    if (!values.title) {
-      errors.title = 'Required';
-    } else if (values.title.length > 15 || values.title.length < 2) {
-      errors.title = 'Must be between 2 and 15 characters';
+    if (!values.name) {
+      errors.name = 'Required';
+    } else if (values.name.length > 15 || values.name.length < 2) {
+      errors.name = 'Must be between 2 and 15 characters';
     }
 
     if (!values.brand) {
@@ -25,10 +28,6 @@ const validate = (values: any /*Product*/) => {
     } else if (values.brand.length < 2) {
     errors.brand = 'Must be between atleast 2 characters';
     }
-
-    if (!values.size) {
-        errors.size = 'Required';
-    }
     
     if (!values.description) {
         errors.description = 'Required';
@@ -41,19 +40,24 @@ const validate = (values: any /*Product*/) => {
     return errors;
 };
 
-const AdminPage = () => {
+const AdminPage = (props: Props) => {
+
     const formik = useFormik({
         initialValues: {
-            title: '',
+            id: Math.random().toString(),
+            name: '',
             brand: '',
             price: 0,
-            size: '',
             description: '',
             image: '',
+            amount: 0,
         },
         validate,
         onSubmit: values => {
-            console.log(values);
+            const newProductData = {
+                ...values,
+            }
+            props.savedNewProductData(newProductData);
         }
     });
     
@@ -65,16 +69,16 @@ const AdminPage = () => {
                 <div className={classes['form-container']}>
                     <div className={classes['input-container']}>
                         <div className={classes['title-input-container' && 'input-item']}>
-                            <label htmlFor="title">Title</label>
+                            <label htmlFor="name">Title</label>
                             <input
-                                id="title"
-                                name="title"
-                                type="title"
+                                id="name"
+                                name="name"
+                                type="name"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                value={formik.values.title}
+                                value={formik.values.name}
                             />
-                            {formik.touched.title && formik.errors.title ? <div className={classes.error}>{formik.errors.title}</div> : null}
+                            {formik.touched.name && formik.errors.name ? <div className={classes.error}>{formik.errors.name}</div> : null}
                         </div>
 
                         <div className={classes['brand-input-container' && 'input-item']}>
@@ -90,31 +94,17 @@ const AdminPage = () => {
                             {formik.touched.brand && formik.errors.brand ? <div className={classes.error}>{formik.errors.brand}</div> : null}
                         </div>
 
-                        <div className={classes['price-size-container']}>
-                            <div className={classes['price-input-container']}>
-                                <label htmlFor="price">Price</label>
-                                <input
-                                    id="price"
-                                    name="price"
-                                    type="price"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.price}
-                                />
-                                {formik.touched.price && formik.errors.price ? <div className={classes.error}>{formik.errors.price}</div> : null}
-                            </div>
-                            <div className={classes['size-input-container']}>
-                                <label htmlFor="size">Size</label>
-                                <input
-                                    id="size"
-                                    name="size"
-                                    type="size"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.size}
-                                />
-                                {formik.touched.size && formik.errors.size ? <div className={classes.error}>{formik.errors.size}</div> : null}
-                            </div>
+                        <div className={classes['description-input-container' && 'input-item']}>
+                            <label htmlFor="price">Price</label>
+                            <input
+                                id="price"
+                                name="price"
+                                type="price"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.price}
+                            />
+                            {formik.touched.price && formik.errors.price ? <div className={classes.error}>{formik.errors.price}</div> : null}
                         </div>
 
                         <div className={classes['description-input-container' && 'input-item']}>
@@ -129,18 +119,16 @@ const AdminPage = () => {
                             {formik.touched.description && formik.errors.description ? <div className={classes.error}>{formik.errors.description}</div> : null}
                         </div>
 
-                        <div className={classes['image-container']}>
-                            <label htmlFor="image" className={classes['image-file']}>
-                                + Add Image
+                        <div className={classes['description-input-container' && 'input-item']}>
+                            <label htmlFor="image">Add Image</label>
                             <input
                                 id="image"
                                 name="image"
-                                type="file"
+                                type="text"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.image}
                             />
-                            </label>
                             {formik.touched.image && formik.errors.image ? <div className={classes.error}>{formik.errors.image}</div> : null}
                         </div>
 
