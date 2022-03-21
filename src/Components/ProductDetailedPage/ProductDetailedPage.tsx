@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useParams } from "react-router-dom"
-import { DUMMY_PRODUCTS } from "../Products/AvailableProducts";
+import products from "../../App";
 
 import classes from './ProductDetailedPage.module.css';
 import CartContext from '../../Store/CartContext';
@@ -8,10 +8,15 @@ import DetailedProductAddBtn from './DetailedProductAddBtn';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Product } from '../../data';
 
-const ProductDetailedPage = () => {
+interface Props {
+    products: Product[];
+}
+
+const ProductDetailedPage = (props: Props) => {
     const { productId } = useParams()
-    const product = DUMMY_PRODUCTS.find(prod => prod.id === productId)
+    const product = props.products.find((prod: Product) => prod.id === productId);
 
     const cartCtx = useContext(CartContext);
 

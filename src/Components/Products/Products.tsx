@@ -1,12 +1,17 @@
 import AvailableProducts from "./AvailableProducts";
 import ProductHeader from "./ProductHeader";
 import { Fragment } from "react";
+import { Product } from "../../data";
 
-const Products = () => {
+interface Props {
+    products: Product[];
+}
+
+const Products = (props: Props) => {    
     return(
         <Fragment>
             <ProductHeader />
-            <AvailableProducts />
+            <AvailableProducts products={props.products} />
         </Fragment>
     );
 }
