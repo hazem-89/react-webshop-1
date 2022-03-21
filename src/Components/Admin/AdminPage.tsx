@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment} from "react";
 import classes from './AdminPage.module.css';
 import { FormikErrors, useFormik } from "formik";
 import AdminHeader from "./AdminHeader";
@@ -57,7 +57,6 @@ const AdminPage = (props: Props) => {
             const newProductData = {
                 ...values,
             }
-            console.log(newProductData);
             props.savedNewProductData(newProductData);
         }
     });
@@ -120,18 +119,16 @@ const AdminPage = (props: Props) => {
                             {formik.touched.description && formik.errors.description ? <div className={classes.error}>{formik.errors.description}</div> : null}
                         </div>
 
-                        <div className={classes['image-container']}>
-                            <label htmlFor="image" className={classes['image-file']}>
-                                + Add Image
+                        <div className={classes['description-input-container' && 'input-item']}>
+                            <label htmlFor="image">Add Image</label>
                             <input
                                 id="image"
                                 name="image"
-                                type="file"
+                                type="text"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.image}
                             />
-                            </label>
                             {formik.touched.image && formik.errors.image ? <div className={classes.error}>{formik.errors.image}</div> : null}
                         </div>
 

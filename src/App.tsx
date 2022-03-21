@@ -149,12 +149,20 @@ export const DUMMY_PRODUCTS = [
   },
 ];
 
+const loadFromLS = () => {
+  const localProducts = localStorage.getItem('products');
+  if (localProducts) {
+    const productItems = JSON.parse(localProducts);
+    return productItems;
+  }
+}
+
 function App() {
   const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [deliveryData, setDeliveryData] = useState<DeliveryData>();
   const [userData, setUserData] = useState<UserData>();
-  const [products, setProducts] = useState<Product[]>(DUMMY_PRODUCTS);
+  const [products, setProducts] = useState<Product[]>(loadFromLS());
   
   const showCartHandler = () => {
     setIsCartOpen(true)
@@ -176,6 +184,10 @@ function App() {
       return [product, ...prevProducts]
     })
   }
+
+  useEffect(() => {
+    localStorage.setItem('products', JSON.stringify(products))
+  });
 
   useEffect(() => {
     if(!userData) return;
