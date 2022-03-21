@@ -68,12 +68,13 @@ const AdminPage = (props: Props) => {
                 <h2 className={classes['admin-title']}>Add new product</h2>
                 <div className={classes['form-container']}>
                     <div className={classes['input-container']}>
-                        <div className={classes['title-input-container' && 'input-item']}>
+                        <div className={classes['input-item']}>
                             <label htmlFor="name">Title</label>
                             <input
                                 id="name"
                                 name="name"
                                 type="name"
+                                placeholder="Product name"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.name}
@@ -81,12 +82,13 @@ const AdminPage = (props: Props) => {
                             {formik.touched.name && formik.errors.name ? <div className={classes.error}>{formik.errors.name}</div> : null}
                         </div>
 
-                        <div className={classes['brand-input-container' && 'input-item']}>
+                        <div className={classes['input-item']}>
                             <label htmlFor="brand">Brand</label>
                             <input
                                 id="brand"
                                 name="brand"
                                 type="brand"
+                                placeholder="Brand name"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.brand}
@@ -94,12 +96,13 @@ const AdminPage = (props: Props) => {
                             {formik.touched.brand && formik.errors.brand ? <div className={classes.error}>{formik.errors.brand}</div> : null}
                         </div>
 
-                        <div className={classes['description-input-container' && 'input-item']}>
+                        <div className={classes['input-item']}>
                             <label htmlFor="price">Price</label>
                             <input
                                 id="price"
                                 name="price"
                                 type="price"
+                                placeholder="999"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.price}
@@ -107,29 +110,31 @@ const AdminPage = (props: Props) => {
                             {formik.touched.price && formik.errors.price ? <div className={classes.error}>{formik.errors.price}</div> : null}
                         </div>
 
-                        <div className={classes['description-input-container' && 'input-item']}>
-                            <label htmlFor="description">Description</label>
-                            <textarea
-                                id="description"
-                                name="description"
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.description}
-                            />
-                            {formik.touched.description && formik.errors.description ? <div className={classes.error}>{formik.errors.description}</div> : null}
-                        </div>
-
-                        <div className={classes['description-input-container' && 'input-item']}>
+                        <div className={classes['input-item']}>
                             <label htmlFor="image">Add Image</label>
                             <input
                                 id="image"
                                 name="image"
                                 type="text"
+                                placeholder="https://pictures/image.png"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.image}
                             />
                             {formik.touched.image && formik.errors.image ? <div className={classes.error}>{formik.errors.image}</div> : null}
+                        </div>
+
+                        <div className={classes['input-item']}>
+                            <label htmlFor="description">Description</label>
+                            <textarea
+                                id="description"
+                                name="description"
+                                placeholder="Some product description..."
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.description}
+                            />
+                            {formik.touched.description && formik.errors.description ? <div className={classes.error}>{formik.errors.description}</div> : null}
                         </div>
 
                         <div className={classes['form-btn-container']}>
