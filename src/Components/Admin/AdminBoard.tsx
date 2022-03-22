@@ -11,6 +11,7 @@ import AdminProdItem from "./AdminProdItem";
 interface Props {
     products: Product[];
     onShow: MouseEventHandler<HTMLButtonElement> | undefined;
+    deleteProduct: (id: string) => void;
   }
 
 const AdminBoard = (props: Props) => {
@@ -31,11 +32,8 @@ const AdminBoard = (props: Props) => {
                     price={product.price}
                     image={product.image}
                     amount={0}
+                    deleteProduct={props.deleteProduct}
                 />
-            </div>
-            <div className={classes['product-btns']}>
-                <button className={classes['edit-btn']}><EditIcon style={{fontSize: 32}} /></button>
-                <button className={classes['delete-btn']}><DeleteIcon style={{fontSize: 32}} /></button>
             </div>
         </div>
     ))

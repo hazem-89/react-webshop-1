@@ -46,7 +46,7 @@ const AddProductModal = (props: Props) => {
 
     const formik = useFormik({
         initialValues: {
-            id: Math.random().toString(),
+            id: Math.ceil(Math.random() * 1000 + 10).toString(),
             name: '',
             brand: '',
             price: 0,
