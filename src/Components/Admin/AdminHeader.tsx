@@ -13,7 +13,7 @@ const Header = () => {
     return(
         <header className={classes.header}>
             <div className={classes['header-item-container']}>
-                <img src={logo} alt="" />
+                <img src={logo} alt="logotype" onClick={onLogOutHandler} />
                 <div>
                     <button className={classes['admin-header-btn']} onClick={onLogOutHandler}>Log out</button>
                 </div>

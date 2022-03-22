@@ -26,6 +26,7 @@
     height: auto;
     width: 140px;
     padding-bottom: .2rem;
+    cursor: pointer;
 }
 
 .admin-header-btn {
