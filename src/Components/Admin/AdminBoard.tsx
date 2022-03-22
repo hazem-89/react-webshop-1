@@ -22,18 +22,20 @@ const AdminBoard = (props: Props) => {
             <div className={classes['product-image']}> 
                 <img src={product.image} alt="productImage" />
             </div>
-            <div className={classes['product-info']}>
-                <AdminProdItem
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    brand={product.brand}
-                    description={product.description}
-                    price={product.price}
-                    image={product.image}
-                    amount={0}
-                    deleteProduct={props.deleteProduct}
-                />
+            <div className={classes['product-item-container']}>
+                <div className={classes['product-info']}>
+                    <AdminProdItem
+                        key={product.id}
+                        id={product.id}
+                        name={product.name}
+                        brand={product.brand}
+                        description={product.description}
+                        price={product.price}
+                        image={product.image}
+                        amount={0}
+                        deleteProduct={props.deleteProduct}
+                    />
+                </div>
             </div>
         </div>
     ))
