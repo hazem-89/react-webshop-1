@@ -229,7 +229,7 @@ function App() {
           <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} deliveryData={deliveryData} />} />
           <Route path="checkout/confirmation" element={<ConfirmationPage />} />
           <Route path="login" element={<Login />} />
-          <Route path="admin" element={<AdminPage savedNewProductData={newProductHandler}/>} />
+          <Route path="admin" element={<AdminPage savedNewProductData={newProductHandler} products={products}/>} />
         </Routes>
       </KeyProvider>
     </CartProvider>
