@@ -11,9 +11,8 @@ const AvailableProducts = (props: Props) => {
     const products = props.products; 
 
     const productsList = products.map(product => (
-        <Card image={product.image}>
+        <Card key={product.id} image={product.image}>
               <ProductItem
-                key={product.id}
                 id={product.id}
                 name={product.name}
                 brand={product.brand}

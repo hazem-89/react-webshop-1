@@ -6,6 +6,7 @@ import ProductItem from "../Products/ProductItem/ProductItem";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
+import AdminProdItem from "./AdminProdItem";
 
 interface Props {
     products: Product[];
@@ -21,14 +22,14 @@ const AdminBoard = (props: Props) => {
                 <img src={product.image} alt="productImage" />
             </div>
             <div className={classes['product-info']}>
-                <ProductItem
+                <AdminProdItem
                     key={product.id}
                     id={product.id}
                     name={product.name}
                     brand={product.brand}
                     description={product.description}
                     price={product.price}
-                    image={product.image} 
+                    image={product.image}
                     amount={0}
                 />
             </div>

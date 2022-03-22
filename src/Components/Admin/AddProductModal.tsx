@@ -55,7 +55,7 @@ const AddProductModal = (props: Props) => {
             amount: 0,
         },
         validate,
-        onSubmit: values => {
+        onSubmit: (values) => {
             const newProductData = {
                 ...values,
             }
