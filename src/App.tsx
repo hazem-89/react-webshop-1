@@ -187,6 +187,10 @@ function App() {
     })
   }
 
+  const deleteProductHandler = (id: string) => {
+    setProducts(products.filter(product => product.id !== id));
+  }
+
   useEffect(() => {
     localStorage.setItem('products', JSON.stringify(products))
   }, [products]);
@@ -231,7 +235,12 @@ function App() {
           <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} deliveryData={deliveryData} />} />
           <Route path="checkout/confirmation" element={<ConfirmationPage />} />
           <Route path="login" element={<Login />} />
-          <Route path="admin" element={<AdminPage savedNewProductData={newProductHandler} products={products}/>} />
+          <Route path="admin" element={<AdminPage 
+            savedNewProductData={newProductHandler} 
+            products={products}
+            deleteProduct={deleteProductHandler}
+            />} 
+          />
         </Routes>
       </KeyProvider>
     </CartProvider>

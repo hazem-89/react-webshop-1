@@ -1,4 +1,12 @@
+.info-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .product {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 2rem;
@@ -14,3 +22,27 @@
     color: #333;
     font-size: 1.25rem;
   }
+
+  .product-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.delete-btn,
+.edit-btn {
+    color: #333;
+    margin-left: 1rem;
+    background-color: transparent;
+}
+
+.delete-btn:hover,
+.edit-btn:hover {
+    cursor: pointer;
+  }
+
+button {
+    border: none;
+    color: #fafafa;
+    font-size: 1.2rem;
+}

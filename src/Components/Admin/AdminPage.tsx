@@ -6,6 +6,7 @@ import AddProductModal from "./AddProductModal";
 
 interface Props {
     savedNewProductData: (newProductData: Product) => void;
+    deleteProduct: (id: string) => void;
     products: Product[];
 }
 
@@ -23,7 +24,7 @@ const AdminPage = (props: Props) => {
     return(
         <Fragment>
             <AdminHeader />
-            <AdminBoard products={props.products} onShow={showAddNewProductHandler} />
+            <AdminBoard products={props.products} onShow={showAddNewProductHandler} deleteProduct={props.deleteProduct} />
             {isNewProductModalOpen && <AddProductModal savedNewProductData={props.savedNewProductData} onClose={hideAddNewProductHandler} />}
         </Fragment>
     );

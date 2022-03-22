@@ -11,6 +11,7 @@ import AdminProdItem from "./AdminProdItem";
 interface Props {
     products: Product[];
     onShow: MouseEventHandler<HTMLButtonElement> | undefined;
+    deleteProduct: (id: string) => void;
   }
 
 const AdminBoard = (props: Props) => {
@@ -21,21 +22,20 @@ const AdminBoard = (props: Props) => {
             <div className={classes['product-image']}> 
                 <img src={product.image} alt="productImage" />
             </div>
-            <div className={classes['product-info']}>
-                <AdminProdItem
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    brand={product.brand}
-                    description={product.description}
-                    price={product.price}
-                    image={product.image}
-                    amount={0}
-                />
-            </div>
-            <div className={classes['product-btns']}>
-                <button className={classes['edit-btn']}><EditIcon style={{fontSize: 32}} /></button>
-                <button className={classes['delete-btn']}><DeleteIcon style={{fontSize: 32}} /></button>
+            <div className={classes['product-item-container']}>
+                <div className={classes['product-info']}>
+                    <AdminProdItem
+                        key={product.id}
+                        id={product.id}
+                        name={product.name}
+                        brand={product.brand}
+                        description={product.description}
+                        price={product.price}
+                        image={product.image}
+                        amount={0}
+                        deleteProduct={props.deleteProduct}
+                    />
+                </div>
             </div>
         </div>
     ))
