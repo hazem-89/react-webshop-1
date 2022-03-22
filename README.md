@@ -1,46 +1,36 @@
+# Quit
+
+Our vision was to create an epic e-commerce application that sells premuim **Shoes**
+The goal was to make the site as minimalistic and simple as possible but with all the neccesary functions. Through the webshop the user can view different shoes both general and in detail. Shoes can be putted in the basket both from the landingpage as well as in the detailed page. From the basket the user get an overview of their products as well as the amount and total cost. At the checkout the user will input their contact information, choose delivery partner, payment options and finally get an confirmation letter with a personal ordernumber. 
+
+From the perspective of the admin user it is possible to login and add products as well as delete and edit.
+
+## Made by:
+**Jonatan Nyberg [github](https://github.com/nybbe123)**
+
+**Hazem Kavas [github](https://github.com/hazem-89)**
+
+**Kawan Majeed [github](https://github.com/Kawium)**
+
+**Isaaq Guleed [github](https://github.com/rchtect)**
+
+[demo]()
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## In the terminal you have to write: 
 
-In the project directory, you can run:
+### `npm i`
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Requirements for passing:
+- [x] 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### VG grade:
+- [x] 
