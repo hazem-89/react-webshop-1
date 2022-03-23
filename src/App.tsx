@@ -37,7 +37,8 @@ function App() {
   const [userData, setUserData] = useState<UserData>();
   const [paymentData, setPaymentData] = useState<PaymentData>();
   const [products, setProducts] = useState<Product[]>(loadProductsFromLS());
-  
+  const [editProductData, setEditProductData] = useState<Product[]>([]);
+
   const showCartHandler = () => {
     setIsCartOpen(true)
   }
@@ -63,6 +64,28 @@ function App() {
     })
   }
 
+  const editProductHandler = (id: string) => {
+    setEditProductData(products.filter(product => product.id === id));
+  }
+
+  const editedProductHandler = (editedProduct: Product) => {
+    setProducts(products.map(product => {
+      if (product.id === editedProduct.id) {
+        return {
+          ...product,
+          name: editedProduct.name,
+          brand: editedProduct.brand,
+          price: editedProduct.price,
+          description: editedProduct.description,
+          image: editedProduct.image,
+
+        };
+      }
+
+      return product;
+    }));
+  }
+
   const deleteProductHandler = (id: string) => {
     setProducts(products.filter(product => product.id !== id));
   }
@@ -72,12 +95,12 @@ function App() {
   }, [products]);
 
   useEffect(() => {
-    if(!userData) return;
+    if (!userData) return;
     navigate('/checkout/delivery');
   }, [userData]);
-  
+
   useEffect(() => {
-    if(!deliveryData) return;
+    if (!deliveryData) return;
     navigate('/checkout/payment');
   }, [deliveryData]);
 
@@ -111,11 +134,14 @@ function App() {
           <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} deliveryData={deliveryData} />} />
           <Route path="checkout/confirmation" element={<ConfirmationPage userData={userData} deliveryData={deliveryData} paymentData={paymentData} />} />
           <Route path="login" element={<Login />} />
-          <Route path="admin" element={<AdminPage 
-            savedNewProductData={newProductHandler} 
-            products={products}
+          <Route path="admin" element={<AdminPage
+            savedNewProductData={newProductHandler}
+            editProductData={editProductData}
             deleteProduct={deleteProductHandler}
-            />} 
+            savedEditedProductData={editedProductHandler}
+            products={products}
+            editProduct={editProductHandler}
+          />}
           />
         </Routes>
       </KeyProvider>

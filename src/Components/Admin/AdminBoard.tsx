@@ -11,15 +11,18 @@ import AdminProdItem from "./AdminProdItem";
 interface Props {
     products: Product[];
     onShow: MouseEventHandler<HTMLButtonElement> | undefined;
+    onEdit: () => void;
     deleteProduct: (id: string) => void;
-  }
+    editProduct: (id: string) => void;
+}
 
 const AdminBoard = (props: Props) => {
     const products = props.products;
 
     const productsList = products.map(product => (
-        <div className={classes['product-container']}>
-            <div className={classes['product-image']}> 
+        <div key={product.id}
+            className={classes['product-container']}>
+            <div className={classes['product-image']}>
                 <img src={product.image} alt="productImage" />
             </div>
             <div className={classes['product-item-container']}>
@@ -34,13 +37,15 @@ const AdminBoard = (props: Props) => {
                         image={product.image}
                         amount={0}
                         deleteProduct={props.deleteProduct}
+                        onEdit={props.onEdit}
+                        editProduct={props.editProduct}
                     />
                 </div>
             </div>
         </div>
     ))
 
-    return(
+    return (
         <Fragment>
             <div className={classes.board}>
                 <div className={classes['board-container']}>
