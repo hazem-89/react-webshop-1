@@ -3,8 +3,15 @@ import { useKey } from '../../../Store/ConfirmationContext';
 import progressbar4 from '../../../assets/images/progressbar-4.png';
 import classes from './ConfirmationPage.module.css';
 import { useNavigate } from 'react-router-dom';
+import { DeliveryData, PaymentData, UserData } from '../../../data';
 
-const ConfirmationPage = () => {
+interface Props {
+    userData?: UserData;
+    deliveryData?: DeliveryData;
+    paymentData?: PaymentData;
+}
+
+const ConfirmationPage = (props: Props) => {
     const navigate = useNavigate()
 
     const { key } = useKey();
@@ -12,7 +19,11 @@ const ConfirmationPage = () => {
 
     function refreshPage() {
         navigate('/');
-      }
+    }
+
+    console.log(props.deliveryData);
+    console.log(props.userData);
+    console.log(props.paymentData);
 
     return(
         <div className={classes['checkout-confirmation-container']}>

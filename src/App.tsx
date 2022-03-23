@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CartProvider from "./Store/cart-provider";
 
-import { DeliveryData, Product, UserData } from "./data";
+import { DeliveryData, PaymentData, Product, UserData } from "./data";
 import Header from "./Components/Layout/Header";
 import Products from "./Components/Products/Products";
 import Cart from "./Components/Cart/Cart";
@@ -35,6 +35,7 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [deliveryData, setDeliveryData] = useState<DeliveryData>();
   const [userData, setUserData] = useState<UserData>();
+  const [paymentData, setPaymentData] = useState<PaymentData>();
   const [products, setProducts] = useState<Product[]>(loadProductsFromLS());
   
   const showCartHandler = () => {
@@ -50,6 +51,10 @@ function App() {
 
   const deliveryDataHandler = (savedDeliveryData: DeliveryData) => {
     setDeliveryData(savedDeliveryData);
+  }
+
+  const paymentDataHandler = (savedPaymentData: PaymentData) => {
+    setPaymentData(savedPaymentData);
   }
 
   const newProductHandler = (product: Product) => {
@@ -102,9 +107,9 @@ function App() {
           <Route path="checkout/user-info" element={<UserInfoPage savedUserData={userDataHandler} />} />
           <Route path="checkout/delivery" element={<DeliveryPage savedDeliveryData={deliveryDataHandler} />} />
           <Route path="checkout/payment" element={<PaymentPage />} />
-          <Route path="checkout/payment/card" element={<CardPaymentPage deliveryData={deliveryData} />} />
+          <Route path="checkout/payment/card" element={<CardPaymentPage savedPaymentData={paymentDataHandler} deliveryData={deliveryData} />} />
           <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} deliveryData={deliveryData} />} />
-          <Route path="checkout/confirmation" element={<ConfirmationPage />} />
+          <Route path="checkout/confirmation" element={<ConfirmationPage userData={userData} deliveryData={deliveryData} paymentData={paymentData} />} />
           <Route path="login" element={<Login />} />
           <Route path="admin" element={<AdminPage 
             savedNewProductData={newProductHandler} 

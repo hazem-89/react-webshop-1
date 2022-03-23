@@ -21,6 +21,12 @@ export interface DeliveryData {
     time: string;
 }
 
+export interface PaymentData {
+    cardnumber: string;
+    expirationdate: string;
+    securecode: string;
+}
+
 export interface OrderKey {
     key: number;
 }

@@ -6,7 +6,7 @@ import { Fragment, useContext } from "react";
 
 import progressbar3 from '../../../assets/images/progressbar-3.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { DeliveryData } from '../../../data';
+import { DeliveryData, PaymentData } from '../../../data';
 import CartContext from '../../../Store/CartContext';
 import { useKey } from '../../../Store/ConfirmationContext';
 import TextField from '@mui/material/TextField';
@@ -18,6 +18,7 @@ interface FormValues {
 }
 
 interface Props {
+    savedPaymentData: (paymentData: PaymentData) => void;
     deliveryData?: DeliveryData;
 }
 
@@ -32,7 +33,7 @@ const validate = (values: FormValues) => {
 
     if (!values.expirationdate) {
         errors.expirationdate = 'Required';
-    } else if (values.expirationdate.length > 7 || values.expirationdate.length < 7) {
+    } else if (values.expirationdate.length > 4 || values.expirationdate.length < 4) {
         errors.expirationdate = 'Must be 4 characters. Ex: xx/xx';
     }
 
@@ -62,6 +63,7 @@ const CardPaymentPage = (props: Props) => {
         },
         validate,
         onSubmit: values => {
+            props.savedPaymentData(values);
             confirm();
             navigate('/checkout/confirmation');
         }
