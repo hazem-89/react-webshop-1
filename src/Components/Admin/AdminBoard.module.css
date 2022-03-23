@@ -68,6 +68,10 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+::-webkit-scrollbar {
+    display: none;
+  }
+
 .product-container {
     width: 100%;
     display: flex;

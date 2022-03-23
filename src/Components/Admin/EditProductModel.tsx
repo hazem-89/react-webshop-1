@@ -141,7 +141,7 @@ const EditProductModal = (props: Props) => {
             </div>
 
             <div className={classes['form-btn-container']}>
-              <button className={classes['form-btn']} type="submit">ADD PRODUCT</button>
+              <button className={classes['form-btn']} type="submit">SAVE PRODUCT</button>
             </div>
           </div>
         </div>

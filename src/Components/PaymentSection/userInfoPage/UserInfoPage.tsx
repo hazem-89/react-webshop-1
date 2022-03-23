@@ -35,8 +35,8 @@ const validate = (values: UserData) => {
         errors.phone = 'Must be 10 characters';
     }
 
-    if (!values.adress) {
-        errors.adress = 'Required';
+    if (!values.address) {
+        errors.address = 'Required';
     }
     
     return errors;
@@ -50,7 +50,7 @@ const UserInfoPage = (props: Props) => {
             name: '',
             email: '',
             phone: '',
-            adress: '',
+            address: '',
         },
         validate,
         onSubmit: values => {
@@ -111,17 +111,17 @@ const UserInfoPage = (props: Props) => {
                 </div>
 
                 <div className={classes['adress-input-container' && 'input-container']}>
-                    <label htmlFor="adress">Adress</label>
+                    <label htmlFor="address">Address</label>
                     <TextField
-                        id="adress"
-                        name="adress"
-                        type="adress"
+                        id="address"
+                        name="address"
+                        type="address"
                         placeholder="FreddieStreet 12B"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.adress}
+                        value={formik.values.address}
                     />
-                    {formik.touched.adress && formik.errors.adress ? <div className={classes.error}>{formik.errors.adress}</div> : null}
+                    {formik.touched.address && formik.errors.address ? <div className={classes.error}>{formik.errors.address}</div> : null}
                 </div>
 
                 <div className={classes['form-btn-container']}>
