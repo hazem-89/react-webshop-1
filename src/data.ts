@@ -12,7 +12,7 @@ export interface UserData {
     name: string;
     email: string;
     phone: string;
-    adress: string;
+    address: string;
 }
 
 export interface DeliveryData {
@@ -22,9 +22,9 @@ export interface DeliveryData {
 }
 
 export interface PaymentData {
-    cardnumber: string;
-    expirationdate: string;
-    securecode: string;
+    cardNumber: string;
+    expirationDate: string;
+    secureCode: string;
 }
 
 export interface OrderKey {
