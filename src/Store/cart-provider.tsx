@@ -1,4 +1,4 @@
-import { ReactChild, ReactFragment, ReactPortal, useReducer } from "react";
+import { ReactChild, ReactFragment, ReactPortal, useEffect, useReducer } from "react";
 import { Product } from "../data";
 
 import CartContext, { CartContextState } from "./CartContext";
@@ -57,7 +57,10 @@ const cartReducer = (state: any, action: any) => {
 };
 
 const CartProvider = (props: { children: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined; }) => {
-    const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState);
+    const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState, () => {
+        const localBasketData = localStorage.getItem('cartState');
+        return localBasketData ? JSON.parse(localBasketData) : defaultCartState;
+    });
 
     const addItemToCartHandler = (item: Product) => {
         dispatchCartAction({ type: 'ADD', item: item });
@@ -73,6 +76,10 @@ const CartProvider = (props: { children: boolean | ReactChild | ReactFragment | 
         addItem: addItemToCartHandler,
         removeItem: removeItemFromCartHandler,
     }
+
+    useEffect(() => {
+        localStorage.setItem('cartState', JSON.stringify(cartState))
+    }, [cartState])
 
     return (
         <CartContext.Provider value={cartContext}>
