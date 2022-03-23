@@ -16,6 +16,27 @@ interface Props {
 }
 
 const DeliveryPage = (props: Props) => {
+    const today = new Date()
+    const month = today.toLocaleString('en-EU', {month: 'long'})
+
+    const plusOneDay = new Date(today)
+    plusOneDay.setDate(plusOneDay.getDate() + 1)
+    const oneDayWeekDay = plusOneDay.toLocaleDateString('en-EU', { weekday: 'long' })
+    const oneDayDay = plusOneDay.toLocaleString('en-EU', {day: '2-digit'})
+    const oneDayDelivery = `${oneDayWeekDay} - ${oneDayDay}th ${month}`;
+
+    const plusTwoDays = new Date(today)
+    plusTwoDays.setDate(plusTwoDays.getDate() + 2)
+    const twoDayWeekDay = plusTwoDays.toLocaleDateString('en-EU', { weekday: 'long' })
+    const twoDayDay = plusTwoDays.toLocaleString('en-EU', {day: '2-digit'})
+    const twoDayDelivery = `${twoDayWeekDay} - ${twoDayDay}th ${month}`;
+
+    const plusThreeDays = new Date(today)
+    plusThreeDays.setDate(plusThreeDays.getDate() + 3)
+    const threeDayWeekDay = plusThreeDays.toLocaleDateString('en-EU', { weekday: 'long' })
+    const threeDayDay = plusThreeDays.toLocaleString('en-EU', {day: '2-digit'})
+    const threeDayDelivery = `${threeDayWeekDay} - ${threeDayDay}th ${month}`;
+
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
@@ -40,7 +61,7 @@ const DeliveryPage = (props: Props) => {
                 <div className={classes['del-container']}>
                     <img src={instabox} alt="" />
                     <div className={classes['del-text-container']}>
-                        <span className={classes['text-title']}>1-2 days</span>
+                        <span className={classes['text-title']}>{oneDayDelivery}</span>
                         <span className={classes['text-price']}>69:-</span>
                     </div>
                     <input
@@ -59,7 +80,7 @@ const DeliveryPage = (props: Props) => {
                 <div className={classes['del-container']}>
                     <img src={budbee} alt="" />
                     <div className={classes['del-text-container']}>
-                        <span className={classes['text-title']}>3-4 days</span>
+                        <span className={classes['text-title']}>{threeDayDelivery}</span>
                         <span className={classes['text-price']}>Free</span>
                     </div>
                     <input
@@ -78,7 +99,7 @@ const DeliveryPage = (props: Props) => {
                 <div className={classes['del-container']}>
                     <img src={postnord} alt="" />
                     <div className={classes['del-text-container']}>
-                        <span className={classes['text-title']}>2-3 days</span>
+                        <span className={classes['text-title']}>{twoDayDelivery}</span>
                         <span className={classes['text-price']}>49:-</span>
                     </div>
                     <input
