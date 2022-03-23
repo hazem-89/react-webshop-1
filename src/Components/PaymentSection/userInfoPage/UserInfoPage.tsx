@@ -7,6 +7,7 @@ import { Fragment } from "react";
 
 import progressbar1 from '../../../assets/images/progressbar-1.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import TextField from '@mui/material/TextField';
 import { UserData } from "../../../data";
 
 interface Props {
@@ -69,7 +70,7 @@ const UserInfoPage = (props: Props) => {
                 </div>
                 <div className={classes['name-input-container' && 'input-container']}>
                     <label htmlFor="name">First & last name</label>
-                    <input
+                    <TextField
                         id="name"
                         name="name"
                         type="name"
@@ -83,7 +84,7 @@ const UserInfoPage = (props: Props) => {
 
                 <div className={classes['email-input-container' && 'input-container']}>
                     <label htmlFor="email">Email</label>
-                    <input
+                    <TextField
                         id="email"
                         name="email"
                         type="email"
@@ -97,7 +98,7 @@ const UserInfoPage = (props: Props) => {
 
                 <div className={classes['phone-input-container' && 'input-container']}>
                     <label htmlFor="phone">Phone</label>
-                    <input
+                    <TextField
                         id="phone"
                         name="phone"
                         type="phone"
@@ -111,7 +112,7 @@ const UserInfoPage = (props: Props) => {
 
                 <div className={classes['adress-input-container' && 'input-container']}>
                     <label htmlFor="adress">Adress</label>
-                    <input
+                    <TextField
                         id="adress"
                         name="adress"
                         type="adress"

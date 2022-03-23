@@ -9,6 +9,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DeliveryData } from '../../../data';
 import CartContext from '../../../Store/CartContext';
 import { useKey } from '../../../Store/ConfirmationContext';
+import TextField from '@mui/material/TextField';
 
 interface FormValues {
     cardnumber: string;
@@ -78,7 +79,7 @@ const CardPaymentPage = (props: Props) => {
 
                 <div className={classes['input-container']}>
                     <label htmlFor="cardnumber">Card number</label>
-                    <input
+                    <TextField
                         id="cardnumber"
                         name="cardnumber"
                         type="cardnumber"
@@ -96,7 +97,7 @@ const CardPaymentPage = (props: Props) => {
                 <div className={classes['card-info-bottom-container']}>
                     <div className={classes['expiration-input-container']}>
                         <label htmlFor="expirationdate">Epiration date</label>
-                        <input
+                        <TextField
                             id="expirationdate"
                             name="expirationdate"
                             type="expirationdate"
@@ -109,7 +110,7 @@ const CardPaymentPage = (props: Props) => {
                     </div>
                     <div className={classes['secure-input-container']}>
                         <label htmlFor="securecode">Secure code</label>
-                        <input
+                        <TextField
                             id="securecode"
                             name="securecode"
                             type="securecode"
