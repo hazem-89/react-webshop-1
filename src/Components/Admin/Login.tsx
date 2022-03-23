@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import classes from './Login.module.css';
 import { Fragment } from "react";
 import { AdminUser } from "../../data";
+import TextField from '@mui/material/TextField';
 
 interface FormValues {
     email: string;
@@ -56,11 +57,11 @@ const Login = () => {
                 </div>
                 <div className={classes['email-input-container' && 'input-container']}>
                     <label htmlFor="email">Email</label>
-                    <input
-                        id="email"
+                    <TextField 
                         name="email"
-                        type="email"
-                        placeholder="Freddie@example.com"
+                        id="email" 
+                        variant="outlined" 
+                        placeholder="Admin@shoe.com"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.email}
@@ -70,7 +71,7 @@ const Login = () => {
 
                 <div className={classes['name-input-container' && 'input-container']}>
                     <label htmlFor="password">Password</label>
-                    <input
+                    <TextField
                         id="password"
                         name="password"
                         type="password"

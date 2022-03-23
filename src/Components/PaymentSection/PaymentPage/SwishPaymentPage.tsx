@@ -9,6 +9,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DeliveryData, UserData } from '../../../data';
 import CartContext from '../../../Store/CartContext';
 import { useKey } from '../../../Store/ConfirmationContext';
+import { TextField } from '@mui/material';
 
 interface FormValues {
     phone: string;
@@ -63,7 +64,7 @@ const SwishPaymentPage = (props: Props) => {
 
                 <div className={classes['phone-input-container' && 'input-container']}>
                     <label htmlFor="phone">Phone number</label>
-                    <input
+                    <TextField
                         id="phone"
                         name="phone"
                         type="phone"

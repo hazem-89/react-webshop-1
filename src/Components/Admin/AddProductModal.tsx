@@ -4,6 +4,8 @@ import { FormikErrors, useFormik } from "formik";
 import { Product } from "../../data";
 import Modal from "../UI/Modal";
 import CloseIcon from '@mui/icons-material/Close';
+import TextField from '@mui/material/TextField';
+
 
 interface Props {
     savedNewProductData: (newProductData: Product) => void;
@@ -74,7 +76,7 @@ const AddProductModal = (props: Props) => {
                     <div className={classes['input-container']}>
                         <div className={classes['input-item']}>
                             <label htmlFor="name">Title</label>
-                            <input
+                            <TextField
                                 id="name"
                                 name="name"
                                 type="name"
@@ -88,7 +90,7 @@ const AddProductModal = (props: Props) => {
 
                         <div className={classes['input-item']}>
                             <label htmlFor="brand">Brand</label>
-                            <input
+                            <TextField
                                 id="brand"
                                 name="brand"
                                 type="brand"
@@ -102,7 +104,7 @@ const AddProductModal = (props: Props) => {
 
                         <div className={classes['input-item']}>
                             <label htmlFor="price">Price</label>
-                            <input
+                            <TextField
                                 id="price"
                                 name="price"
                                 type="price"
@@ -116,7 +118,7 @@ const AddProductModal = (props: Props) => {
 
                         <div className={classes['input-item']}>
                             <label htmlFor="image">Add Image</label>
-                            <input
+                            <TextField
                                 id="image"
                                 name="image"
                                 type="text"
@@ -130,7 +132,8 @@ const AddProductModal = (props: Props) => {
 
                         <div className={classes['input-item']}>
                             <label htmlFor="description">Description</label>
-                            <textarea
+                            <TextField
+                                className={classes['text-area']}
                                 id="description"
                                 name="description"
                                 placeholder="Some product description..."
