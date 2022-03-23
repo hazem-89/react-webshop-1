@@ -1,0 +1,129 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 3rem;
+    height: 70%;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+}
+
+.admin-title {
+    width: 100%;
+    max-width: 490px;
+    font-size: 2rem;
+    padding: 0 .6rem;
+    padding-bottom: .5rem;
+}
+
+.close-btn {
+    background-color: transparent;
+    color: #333;
+}
+
+.close-btn:hover {
+    cursor: pointer;
+}
+
+.form-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    gap: 1rem;
+}
+
+.input-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .5rem;
+}
+
+ label {
+    padding-left: .8rem;
+    color: rgb(119, 119, 119);
+}
+
+.price-size-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.price-input-container,
+.size-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    width: 45%;
+    gap: .5rem;
+}
+
+.form-btn-container {
+    width: 100%;
+    max-width: 550px;
+    margin-top: 2rem;
+}
+
+.form-btn {
+    width: 100%;
+    font-size: 1rem;
+    background-color: #936EFE;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+}
+
+.form-btn:hover {
+  background-color: #936EFE;
+  transform: scale(103%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: 150ms;
+  cursor: pointer;
+}
+
+.form-btn:active {
+  transform: translate(0, .05rem);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+}
+
+.error {
+    padding-left: 1rem;
+    font-size: .8rem;
+    color: #F17171;
+    font-style: italic;
+}
+
+@media (max-width: 430px) {
+    .form-container {
+        padding: 0;
+        box-shadow:none;
+    }
+
+    .admin-title {
+        margin-left: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .form-btn-container {
+        padding: 0;
+    }
+}
