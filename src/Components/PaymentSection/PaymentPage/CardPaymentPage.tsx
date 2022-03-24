@@ -12,9 +12,9 @@ import { useKey } from '../../../Store/ConfirmationContext';
 import TextField from '@mui/material/TextField';
 
 interface FormValues {
-    cardnumber: string;
-    expirationdate: string;
-    securecode: string;
+    cardNumber: string;
+    expirationDate: string;
+    secureCode: string;
 }
 
 interface Props {
@@ -25,22 +25,22 @@ interface Props {
 const validate = (values: FormValues) => {
     const errors: FormikErrors<FormValues> = {};
 
-    if (!values.cardnumber) {
-        errors.cardnumber = 'Required';
-    } else if (values.cardnumber.length > 19 || values.cardnumber.length < 19) {
-        errors.cardnumber = 'Must be 16 characters. Ex: xxxx xxxx xxxx xxxx';
+    if (!values.cardNumber) {
+        errors.cardNumber = 'Required';
+    } else if (values.cardNumber.length > 19 || values.cardNumber.length < 19) {
+        errors.cardNumber = 'Must be 16 characters. Ex: xxxx xxxx xxxx xxxx';
     }
 
-    if (!values.expirationdate) {
-        errors.expirationdate = 'Required';
-    } else if (values.expirationdate.length > 4 || values.expirationdate.length < 4) {
-        errors.expirationdate = 'Must be 4 characters. Ex: xx/xx';
+    if (!values.expirationDate) {
+        errors.expirationDate = 'Required';
+    } else if (values.expirationDate.length > 4 || values.expirationDate.length < 4) {
+        errors.expirationDate = 'Must be 4 characters. Ex: xx/xx';
     }
 
-    if (!values.securecode) {
-        errors.securecode = 'Required';
-    } else if (values.securecode.length > 3 || values.securecode.length < 3) {
-        errors.securecode = 'Must be 3 characters. Ex: xxx';
+    if (!values.secureCode) {
+        errors.secureCode = 'Required';
+    } else if (values.secureCode.length > 3 || values.secureCode.length < 3) {
+        errors.secureCode = 'Must be 3 characters. Ex: xxx';
     }
 
     return errors;
@@ -53,13 +53,13 @@ const CardPaymentPage = (props: Props) => {
 
     const totalAmount = `${(cartCtx.totalAmount + Number(props.deliveryData?.price)).toFixed(2)}:-`;
     const shippingCost = `${props.deliveryData?.price}:-`;
-    
+
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
-            cardnumber: '',
-            expirationdate: '',
-            securecode: '',
+            cardNumber: '',
+            expirationDate: '',
+            secureCode: '',
         },
         validate,
         onSubmit: values => {
@@ -74,54 +74,56 @@ const CardPaymentPage = (props: Props) => {
             <div className={classes['checkout-header']}>
                 <img src={progressbar3} alt="" />
             </div>
-            <form className={classes['card-payment-form']} onSubmit={formik.handleSubmit}>
+            <form id="usrForm" className={classes['card-payment-form']} onSubmit={formik.handleSubmit} autoComplete="on">
                 <div className={classes['form-title']}>
                     <h2>Payment<span> - card</span></h2>
                 </div>
 
                 <div className={classes['input-container']}>
-                    <label htmlFor="cardnumber">Card number</label>
+                    <label htmlFor="cc-number">Card number</label>
                     <TextField
-                        id="cardnumber"
-                        name="cardnumber"
-                        type="cardnumber"
+                        id="cardNumber"
+                        name="cc-number"
+                        type="cardNumber"
+                        autoComplete="cc-number"
                         placeholder='**** **** **** ****'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.cardnumber
+                        value={formik.values.cardNumber
                             .replace(/\s/g, "")
                             .replace(/(\d{4})/g, "$1 ")
                             .trim()}
                     />
-                    {formik.touched.cardnumber && formik.errors.cardnumber ? <div className={classes.error}>{formik.errors.cardnumber}</div> : null}
+                    {formik.touched.cardNumber && formik.errors.cardNumber ? <div className={classes.error}>{formik.errors.cardNumber}</div> : null}
                 </div>
 
                 <div className={classes['card-info-bottom-container']}>
                     <div className={classes['expiration-input-container']}>
-                        <label htmlFor="expirationdate">Epiration date</label>
+                        <label htmlFor="cc-exp">Expiration date</label>
                         <TextField
-                            id="expirationdate"
-                            name="expirationdate"
-                            type="expirationdate"
+                            id="expirationDate"
+                            name="cc-exp"
+                            autoComplete="cc-exp"
+                            type="expirationDate"
                             placeholder='01/21'
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.expirationdate}
+                            value={formik.values.expirationDate}
                         />
-                        {formik.touched.expirationdate && formik.errors.expirationdate ? <div className={classes.error}>{formik.errors.expirationdate}</div> : null}
+                        {formik.touched.expirationDate && formik.errors.expirationDate ? <div className={classes.error}>{formik.errors.expirationDate}</div> : null}
                     </div>
                     <div className={classes['secure-input-container']}>
-                        <label htmlFor="securecode">Secure code</label>
+                        <label htmlFor="secureCode">Secure code</label>
                         <TextField
-                            id="securecode"
-                            name="securecode"
-                            type="securecode"
+                            id="secureCode"
+                            name="secureCode"
+                            type="secureCode"
                             placeholder='***'
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.securecode}
+                            value={formik.values.secureCode}
                         />
-                        {formik.touched.securecode && formik.errors.securecode ? <div className={classes.error}>{formik.errors.securecode}</div> : null}
+                        {formik.touched.secureCode && formik.errors.secureCode ? <div className={classes.error}>{formik.errors.secureCode}</div> : null}
                     </div>
                 </div>
 

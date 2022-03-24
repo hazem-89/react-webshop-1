@@ -22,9 +22,9 @@ export interface DeliveryData {
 }
 
 export interface PaymentData {
-    cardnumber: string;
-    expirationdate: string;
-    securecode: string;
+    cardNumber: string;
+    expirationDate: string;
+    secureCode: string;
 }
 
 export interface OrderKey {
