@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
 .product-header-container {
     display: flex;
     justify-content: space-between;
@@ -10,6 +12,7 @@
 .product-header-container h2 {
     font-size: 2rem;
     font-weight: 900;
+    font-family: 'Lato', sans-serif;
 }
 
 .sort-container {

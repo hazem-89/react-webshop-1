@@ -24,32 +24,6 @@ export const DUMMY_PRODUCTS = [
     },
     {
       id: 'p2',
-      name: 'Soft sneakers',
-      brand: 'Vans',
-      description: `Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex.`,
-      price: 499,
-      image: img2,
-      amount: 0,
-    },
-    {
-      id: 'p3',
-      name: 'Streeter Vol. Max',
-      brand: 'Nikitoe',
-      description: `Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex.`,
-      price: 699,
-      image: img3,
-      amount: 0,
-    },
-    {
-      id: 'p4',
       name: 'Exo black No.2',
       brand: 'Reuse',
       description: `Lorem ipsum dolor sit amet, consectetur
@@ -62,33 +36,7 @@ export const DUMMY_PRODUCTS = [
       amount: 0,
     },
     {
-      id: 'p5',
-      name: 'BlendIn sneakers',
-      brand: 'Vans',
-      description: `Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex.`,
-      price: 1099,
-      image: img5,
-      amount: 0,
-    },
-    {
-      id: 'p6',
-      name: 'Red hot chilli',
-      brand: 'New Balance',
-      description: `Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex.`,
-      price: 899,
-      image: img6,
-      amount: 0,
-    },
-    {
-      id: 'p7',
+      id: 'p3',
       name: 'HikerMax pro',
       brand: 'Americano',
       description: `Lorem ipsum dolor sit amet, consectetur
@@ -101,7 +49,7 @@ export const DUMMY_PRODUCTS = [
       amount: 0,
     },
     {
-      id: 'p8',
+      id: 'p4',
       name: 'SpeedUp',
       brand: 'New Balance',
       description: `Lorem ipsum dolor sit amet, consectetur
@@ -114,7 +62,7 @@ export const DUMMY_PRODUCTS = [
       amount: 0,
     },
     {
-      id: 'p9',
+      id: 'p5',
       name: 'balance',
       brand: 'Vans',
       description: `Lorem ipsum dolor sit amet, consectetur
@@ -124,6 +72,58 @@ export const DUMMY_PRODUCTS = [
       laboris nisi ut aliquip ex.`,
       price: 699,
       image: img9,
+      amount: 0,
+    },
+    {
+      id: 'p6',
+      name: 'BlendIn sneakers',
+      brand: 'Vans',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
+      price: 1099,
+      image: img5,
+      amount: 0,
+    },
+    {
+      id: 'p7',
+      name: 'Red hot chilli',
+      brand: 'New Balance',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
+      price: 899,
+      image: img6,
+      amount: 0,
+    },
+    {
+      id: 'p8',
+      name: 'Soft sneakers',
+      brand: 'Vans',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
+      price: 499,
+      image: img2,
+      amount: 0,
+    },
+    {
+      id: 'p9',
+      name: 'Streeter Vol. Max',
+      brand: 'Nikitoe',
+      description: `Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex.`,
+      price: 699,
+      image: img3,
       amount: 0,
     },
   ];

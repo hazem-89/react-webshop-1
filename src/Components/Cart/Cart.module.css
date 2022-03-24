@@ -8,6 +8,10 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .title {
       font-size: 1.8rem;
       margin-top: 0rem;
@@ -17,8 +21,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 1.4rem;
     margin: 2rem 0 0 0;
     padding: 1rem;
   }
