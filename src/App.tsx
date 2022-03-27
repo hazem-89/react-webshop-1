@@ -19,6 +19,7 @@ import Footer from './Components/Layout/Footer';
 import Login from "./Components/Admin/Login";
 import AdminPage from "./Components/Admin/AdminPage";
 import { DUMMY_PRODUCTS } from "./DummyProducts";
+import AsideBar from "./Components/Layout/AsideBar";
 
 const loadProductsFromLS = () => {
   const localProducts = localStorage.getItem('products');
@@ -112,7 +113,7 @@ function App() {
           <Route path="/" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
-              <Header onShowCart={showCartHandler} />
+              <Header onShowCart={showCartHandler} showSideBar={undefined} />
               <main>
                 <Products products={products} />
               </main>
@@ -122,7 +123,7 @@ function App() {
           <Route path=":productId" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
-              <Header onShowCart={showCartHandler} />
+              <Header onShowCart={showCartHandler} showSideBar={undefined} />
               <ProductDetailedPage products={products} />
               <Footer />
             </Fragment>
