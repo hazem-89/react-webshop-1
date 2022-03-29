@@ -19,7 +19,7 @@ import Footer from './Components/Layout/Footer';
 import Login from "./Components/Admin/Login";
 import AdminPage from "./Components/Admin/AdminPage";
 import { DUMMY_PRODUCTS } from "./DummyProducts";
-import About from "./Components/Layout/About";
+import Contact from "./Components/Layout/Contact";
 
 const loadProductsFromLS = () => {
   const localProducts = localStorage.getItem('products');
@@ -120,6 +120,13 @@ function App() {
               <Footer />
             </Fragment>
           } />
+          <Route path="contact" element={
+            <Fragment>
+              {isCartOpen && <Cart onClose={hideCartHandler} />}
+            <Header onShowCart={showCartHandler}/>
+            <Contact/>
+            </Fragment>
+          }/>
           <Route path=":productId" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
@@ -135,7 +142,7 @@ function App() {
           <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} deliveryData={deliveryData} />} />
           <Route path="checkout/confirmation" element={<ConfirmationPage userData={userData} deliveryData={deliveryData} paymentData={paymentData} />} />
           <Route path="login" element={<Login />} />
-          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="admin" element={<AdminPage
             savedNewProductData={newProductHandler}
             editProductData={editProductData}
