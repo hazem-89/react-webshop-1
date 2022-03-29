@@ -37,7 +37,7 @@
 }
 
 .footer-item-devider {
-    border-bottom: 1px solid #636363;
+    border-bottom: 1px solid transparent;
     height: 1px;
     width: 100%;
     max-width: 1250px;
@@ -55,7 +55,7 @@
 }
 
 .link-separator {
-    border-right: 1px solid #636363;
+    border-right: 1px solid transparent;
     height: 2rem;
     width: 1px;
 }
