@@ -7,6 +7,9 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AdminPage from '../Admin/AdminPage';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import About from './About';
+
 
 const Footer = () => {
     return(
@@ -36,7 +39,7 @@ const Footer = () => {
                 <span className={classes['link-separator']}></span>
                 <Link to={'/login'}><span style={{color: '#fafafa'}}>Admin</span></Link>
                 <span className={classes['link-separator']}></span>
-                <span>About</span>
+                <Link to={'/about'}><span>about</span></Link>
                 <span className={classes['link-separator']}></span>
                 <span>Info</span>
                 <span className={classes['link-separator']}></span>
