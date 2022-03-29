@@ -6,7 +6,7 @@
   left: -100%;
   z-index: 10000;
   height: 100vh;
-  transition: 850ms;
+  transition: 500ms;
   display: flex;
   justify-content: center;
 }

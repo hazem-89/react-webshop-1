@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+.product-header-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 2rem auto 0 auto;
+    max-width: 1250px;
+    width: 81%;
+}
+
+.product-header-container h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    padding-top: .5rem;
+    position: relative;
+    cursor: pointer;
+}
+.container-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 6rem;
+}
+.filter-choices {
+    position: absolute;
+    top: 2.5rem;
+    left: 0rem;
+    z-index: 1111;
+    display: none;
+}
+.filter-choices.active {
+    display: block;
+}
+.sort-choices {
+    position: absolute;
+    top: 2.5rem;
+    left: 0rem;
+    z-index: 1111;
+    display: none;
+}
+.sort-choices.active {
+    display: block;
+}
+.sort-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    padding-top: .5rem;
+    position: relative;
+    cursor: pointer;
+}
+.sort-container span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sort-filter-container {
+    display: flex;
+}
