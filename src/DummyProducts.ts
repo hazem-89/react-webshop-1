@@ -9,121 +9,130 @@ import img8 from './assets/images/img-8.jpeg';
 import img9 from './assets/images/img-9.jpeg';
 
 export const DUMMY_PRODUCTS = [
-    {
-      id: 'p1',
-      name: 'Chunky sneakers',
-      brand: 'New Balance',
-      description: `Lorem ipsum dolor sit amet, consectetur
+  {
+    id: 'p1',
+    name: 'Chunky sneakers',
+    brand: 'New Balance',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 799,
-      image: img1,
-      amount: 0,
-    },
-    {
-      id: 'p2',
-      name: 'Exo black No.2',
-      brand: 'Reuse',
-      description: `Lorem ipsum dolor sit amet, consectetur
+    price: 799,
+    image: img1,
+    amount: 0,
+    availableSizes: ['36', '37', '38', '39', '40', '41', '42', '43', '44']
+  },
+  {
+    id: 'p2',
+    name: 'Exo black No.2',
+    brand: 'Reuse',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 999,
-      image: img4,
-      amount: 0,
-    },
-    {
-      id: 'p3',
-      name: 'HikerMax pro',
-      brand: 'Americano',
-      description: `Lorem ipsum dolor sit amet, consectetur
+    price: 999,
+    image: img4,
+    amount: 0,
+    availableSizes: ['36', '37', '38', '39', '42', '43', '44']
+  },
+  {
+    id: 'p3',
+    name: 'HikerMax pro',
+    brand: 'Americano',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 1299,
-      image: img7,
-      amount: 0,
-    },
-    {
-      id: 'p4',
-      name: 'SpeedUp',
-      brand: 'New Balance',
-      description: `Lorem ipsum dolor sit amet, consectetur
+    price: 1299,
+    image: img7,
+    amount: 0,
+    availableSizes: ['36', '39', '40', '41', '42', '43', '44']
+  },
+  {
+    id: 'p4',
+    name: 'SpeedUp',
+    brand: 'New Balance',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 1099,
-      image: img8,
-      amount: 0,
-    },
-    {
-      id: 'p5',
-      name: 'balance',
-      brand: 'Vans',
-      description: `Lorem ipsum dolor sit amet, consectetur
+    price: 1099,
+    image: img8,
+    amount: 0,
+    availableSizes: ['36', '37', '40', '41', '42', '43', '44']
+  },
+  {
+    id: 'p5',
+    name: 'balance',
+    brand: 'Vans',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 699,
-      image: img9,
-      amount: 0,
-    },
-    {
-      id: 'p6',
-      name: 'BlendIn sneakers',
-      brand: 'Vans',
-      description: `Lorem ipsum dolor sit amet, consectetur
+    price: 699,
+    image: img9,
+    amount: 0,
+    availableSizes: ['36', '37', '38', '39', '40', '43', '44']
+  },
+  {
+    id: 'p6',
+    name: 'BlendIn sneakers',
+    brand: 'Vans',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 1099,
-      image: img5,
-      amount: 0,
-    },
-    {
-      id: 'p7',
-      name: 'Red hot chilli',
-      brand: 'New Balance',
-      description: `Lorem ipsum dolor sit amet, consectetur
+    price: 1099,
+    image: img5,
+    amount: 0,
+    availableSizes: ['36', '37', '38', '39', '40', '41', '42']
+  },
+  {
+    id: 'p7',
+    name: 'Red hot chilli',
+    brand: 'New Balance',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 899,
-      image: img6,
-      amount: 0,
-    },
-    {
-      id: 'p8',
-      name: 'Soft sneakers',
-      brand: 'Vans',
-      description: `Lorem ipsum dolor sit amet, consectetur
+    price: 899,
+    image: img6,
+    amount: 0,
+    availableSizes: ['38', '39', '40', '41', '42', '43', '44']
+  },
+  {
+    id: 'p8',
+    name: 'Soft sneakers',
+    brand: 'Vans',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 499,
-      image: img2,
-      amount: 0,
-    },
-    {
-      id: 'p9',
-      name: 'Streeter Vol. Max',
-      brand: 'Nikitoe',
-      description: `Lorem ipsum dolor sit amet, consectetur
+    price: 499,
+    image: img2,
+    amount: 0,
+    availableSizes: ['36', '37', '40', '41', '42', '43', '44']
+  },
+  {
+    id: 'p9',
+    name: 'Streeter Vol. Max',
+    brand: 'Nikitoe',
+    description: `Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex.`,
-      price: 699,
-      image: img3,
-      amount: 0,
-    },
-  ];
+    price: 699,
+    image: img3,
+    amount: 0,
+    availableSizes: ['36', '37', '38', '41', '42', '43', '44']
+  },
+];

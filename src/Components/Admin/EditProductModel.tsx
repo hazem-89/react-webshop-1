@@ -56,6 +56,7 @@ const EditProductModal = (props: Props) => {
       description: props.editProductData[0].description,
       image: props.editProductData[0].image,
       amount: 0,
+      size: []
     },
     validate,
     onSubmit: (values) => {

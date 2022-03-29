@@ -1,24 +1,25 @@
 import React, { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 
-import HamburgerMenu from "./HamburgerMenu";
 import HeaderCartButton from "./HeaderCartButton";
 import logo from '../../assets/images/Group 38.png';
 import classes from './Header.module.css';
+import AsideBar from "./AsideBar";
 
-const Header = (props: { onShowCart: any; }) => {
+const Header = (props: { onShowCart: any; showSideBar: any; }) => {
     const navigate = useNavigate();
     const logotypeClickHandler = () => {
         navigate('/');
     }
-    return(
+    return (
         <Fragment>
             <header className={classes.header}>
                 <div className={classes['header-item-container']}>
-                <HamburgerMenu />
-                <img src={logo} alt="logo" onClick={logotypeClickHandler} />
-                <HeaderCartButton onClick={props.onShowCart} />
+                    <AsideBar onClick={props.showSideBar} />
+                    <img src={logo} alt="logo" onClick={logotypeClickHandler} />
+                    <HeaderCartButton onClick={props.onShowCart} />
                 </div>
+
             </header>
         </Fragment>
     );

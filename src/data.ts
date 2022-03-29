@@ -6,6 +6,7 @@ export interface Product {
     price: number;
     image: string;
     amount: number;
+    size: any;
 }
 
 export interface UserData {
