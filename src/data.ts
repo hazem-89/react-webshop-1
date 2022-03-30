@@ -36,7 +36,15 @@ export interface AdminUser {
     adminName: string;
     adminPassword: string;
 }
+
+
+export interface FaqCardData {
+    id: number;
+    title: string;
+    desc: string;
+    image: string;
+}
 export interface sizeOptions {
     value: string;
-    label: string;
+    label: string
 }

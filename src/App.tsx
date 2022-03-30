@@ -2,8 +2,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CartProvider from "./Store/cart-provider";
-
-import { DeliveryData, PaymentData, Product, UserData } from "./data";
+import { DeliveryData, PaymentData, Product, UserData, FaqCardData } from "./data";
 import Header from "./Components/Layout/Header";
 import Products from "./Components/Products/Products";
 import Cart from "./Components/Cart/Cart";
@@ -19,6 +18,9 @@ import Footer from './Components/Layout/Footer';
 import Login from "./Components/Admin/Login";
 import AdminPage from "./Components/Admin/AdminPage";
 import { DUMMY_PRODUCTS } from "./DummyProducts";
+import Faq from "./Components/Faq/FaqPage";
+import { DummyFAQ } from "./DummyFAQ";
+import Contact from "./Components/Layout/Contact";
 
 const loadProductsFromLS = () => {
   const localProducts = localStorage.getItem('products');
@@ -29,6 +31,7 @@ const loadProductsFromLS = () => {
     return DUMMY_PRODUCTS;
   }
 }
+
 
 function App() {
   const navigate = useNavigate();
@@ -119,6 +122,13 @@ function App() {
               <Footer />
             </Fragment>
           } />
+          <Route path="contact" element={
+            <Fragment>
+              {isCartOpen && <Cart onClose={hideCartHandler} />}
+            <Header onShowCart={showCartHandler}/>
+            <Contact/>
+            </Fragment>
+          }/>
           <Route path=":productId" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
@@ -134,6 +144,7 @@ function App() {
           <Route path="checkout/payment/swish" element={<SwishPaymentPage userData={userData} deliveryData={deliveryData} />} />
           <Route path="checkout/confirmation" element={<ConfirmationPage userData={userData} deliveryData={deliveryData} paymentData={paymentData} />} />
           <Route path="login" element={<Login />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="admin" element={<AdminPage
             savedNewProductData={newProductHandler}
             editProductData={editProductData}
@@ -143,6 +154,14 @@ function App() {
             editProduct={editProductHandler}
           />}
           />
+          <Route path="faq" element={
+            <Fragment>
+              {isCartOpen && <Cart onClose={hideCartHandler} />}
+            <Header onShowCart={showCartHandler}/>
+            <Faq faqs={DummyFAQ}/>
+            <Footer />
+            </Fragment>
+          }/>
         </Routes>
       </KeyProvider>
     </CartProvider>
