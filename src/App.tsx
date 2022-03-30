@@ -2,7 +2,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CartProvider from "./Store/cart-provider";
-import { DeliveryData, PaymentData, Product, UserData, FaqCardData } from "./data";
+import { DeliveryData, PaymentData, Product, UserData } from "./data";
 import Header from "./Components/Layout/Header";
 import Products from "./Components/Products/Products";
 import Cart from "./Components/Cart/Cart";
@@ -125,10 +125,10 @@ function App() {
           <Route path="contact" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
-            <Header onShowCart={showCartHandler}/>
-            <Contact/>
+              <Header onShowCart={showCartHandler} showSideBar={undefined} />
+              <Contact />
             </Fragment>
-          }/>
+          } />
           <Route path=":productId" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
@@ -157,11 +157,11 @@ function App() {
           <Route path="faq" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
-            <Header onShowCart={showCartHandler}/>
-            <Faq faqs={DummyFAQ}/>
-            <Footer />
+              <Header onShowCart={showCartHandler} showSideBar={undefined} />
+              <Faq faqs={DummyFAQ} />
+              <Footer />
             </Fragment>
-          }/>
+          } />
         </Routes>
       </KeyProvider>
     </CartProvider>
