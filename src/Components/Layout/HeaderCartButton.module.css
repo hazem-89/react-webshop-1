@@ -54,3 +54,9 @@
       transform: scale(1);
     }
   }
+
+  @media (max-width: 430px) {
+    .button {
+      padding: 0.55rem 1rem;
+    }
+  }

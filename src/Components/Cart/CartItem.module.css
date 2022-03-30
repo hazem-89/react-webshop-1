@@ -38,6 +38,7 @@ img {
   font-size: 1.2rem;
   font-weight: 400;
   color: #333;
+  margin-bottom: 1rem;
 }
 
 .cart-item-info-bottom {
@@ -86,6 +87,10 @@ img {
 @media (max-width: 580px) {
   img {
     width: 10rem;
+  }
+
+  .price {
+    margin-bottom: 0rem;
   }
 }
 

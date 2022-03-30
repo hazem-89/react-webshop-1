@@ -28,7 +28,6 @@ const AsideBar = (props: { onClick: MouseEventHandler<HTMLButtonElement> | undef
             return (
               <li key={index} className={item.cName}>
                 <Link to={item.link}>
-                  {/* {item.icon} */}
                   <span>{item.title}</span>
                 </Link>
               </li>
