@@ -1,0 +1,9 @@
+.announcement{
+  margin-top: 5rem;
+  color: #333;
+  min-height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(47, 183, 224, 0.432);
+}

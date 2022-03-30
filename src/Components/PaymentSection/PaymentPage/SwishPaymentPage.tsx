@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import {FormikErrors, useFormik} from 'formik';
+import { FormikErrors, useFormik } from 'formik';
 
 import classes from './SwishPaymentPage.module.css';
 import { Fragment, useContext } from "react";
@@ -25,21 +25,21 @@ const validate = (values: FormValues) => {
 
     if (!values.phone) {
         errors.phone = 'Required';
-    } else if (values.phone.length > 10 || values.phone.length < 10 ) {
+    } else if (values.phone.length > 10 || values.phone.length < 10) {
         errors.phone = 'Must be 10 characters';
     }
-    
+
     return errors;
 };
 
 const SwishPaymentPage = (props: Props) => {
     const { confirm } = useKey();
-    
+
     const cartCtx = useContext(CartContext);
 
     const totalAmount = `${(cartCtx.totalAmount + Number(props.deliveryData?.price)).toFixed(2)}:-`;
     const shippingCost = `${props.deliveryData?.price}:-`;
-    
+
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
@@ -52,7 +52,7 @@ const SwishPaymentPage = (props: Props) => {
         }
     });
 
-    return(
+    return (
         <Fragment>
             <div className={classes['checkout-header']}>
                 <img src={progressbar3} alt="" />
@@ -96,7 +96,7 @@ const SwishPaymentPage = (props: Props) => {
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
                             <span>CONFIRM ORDER</span>
-                            <ArrowForwardIosIcon style={{fontSize: 20}}/>
+                            <ArrowForwardIosIcon style={{ fontSize: 20 }} />
                         </div>
                     </button>
                 </div>
