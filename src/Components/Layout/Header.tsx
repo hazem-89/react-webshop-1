@@ -19,7 +19,6 @@ const Header = (props: { onShowCart: any; showSideBar: any; }) => {
                     <img src={logo} alt="logo" onClick={logotypeClickHandler} />
                     <HeaderCartButton onClick={props.onShowCart} />
                 </div>
-
             </header>
         </Fragment>
     );

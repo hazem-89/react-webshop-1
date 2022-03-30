@@ -45,25 +45,25 @@ const ProductItem = (props: { price: number; id: string; name: string; brand: st
                     </div>
                 </li>
             </Link>
-            {/* <div className={classes.select}>
-                <h2>Available Sizes</h2>
-                <FilterComponent /></div> */}
-            <Controller
-                control={control}
-                rules={{ required: true }}
-                name="size"
-                render={() => (
-                    <Select
-                        value={sizeOptions.find(obj => obj.value === size)}
-                        options={sizeOptions}
-                        className='mb-3'
-                        placeholder='Size'
-                        isSearchable
-                        autoFocus
-                        onChange={handleChange}
-                    />
-                )}
-            />
+            <div className={classes.select}>
+                <Controller
+                    control={control}
+                    rules={{ required: true }}
+                    name="size"
+                    render={() => (
+                        <Select
+                            value={sizeOptions.find(obj => obj.value === size)}
+                            options={sizeOptions}
+                            className={classes['select-size-bar']}
+                            placeholder='Size'
+                            menuPortalTarget={document.querySelector('body')}
+                            isSearchable
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                    )}
+                />
+            </div>
             <div>
                 <ProductItemAddBtn onAddToCart={addToCartHandler} />
             </div>

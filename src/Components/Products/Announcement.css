@@ -1,9 +1,10 @@
 .announcement{
-  margin-top: 5rem;
-  color: #333;
-  min-height: 3rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: rgba(47, 183, 224, 0.432);
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 5rem;
+  color: #fafafa;
+  padding: 1rem 0;
+  background-color: #333;
 }

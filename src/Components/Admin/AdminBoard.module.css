@@ -13,12 +13,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
 .add-btn {
     border-radius: 100px;
-    padding: .65rem .65rem .5rem .65rem;
+    padding: .4rem .65rem .5rem .65rem;
     background-color: #936EFE;
     color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -66,6 +66,10 @@
     overflow: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+.product-image img {
+    height: 10rem;
 }
 
 ::-webkit-scrollbar {

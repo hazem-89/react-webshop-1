@@ -1,10 +1,10 @@
 .add-icon {
     position: absolute;
-    top: 4rem;
+    bottom: 2rem;
     right: 3rem;
     border: none;
     border-radius: 100px;
-    padding: .45rem .65rem .60rem .65rem;
+    padding: .4rem .65rem .60rem .65rem;
     background-color: #252525;
     color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -22,27 +22,7 @@
 }
 
 @media (max-width: 400px) {
-    .card {
-        height: 25rem;
-        background-position: center 100%;
-    }
-
     .add-icon {
-        top: 82%;
-        right: 50%;
-        transform: translate(50%);
-        border-radius: 6px;
-        padding: .35rem 6.5rem .2rem 6.5rem;
-        background-color: #252525;
-        color: #fff;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .add-icon:hover {
-        transform: translate(50%);
-    }
-    
-    .add-icon:active {
-      transform: translate(50%);
+        right: 2rem;
     }
 }
