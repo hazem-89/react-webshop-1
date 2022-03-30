@@ -1,4 +1,4 @@
-import { SetStateAction, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 
 import classes from './ProductItem.module.css';
 import ProductItemAddBtn from './ProductItemAddBtn';
@@ -10,12 +10,11 @@ import Select from 'react-select'
 import { Link } from "react-router-dom";
 import { sizeOptions } from '../../../FilterData';
 import { Controller, useForm } from "react-hook-form";
-// import FilterComponent from './FilterComponent';
 
 const ProductItem = (props: { price: number; id: string; name: string; brand: string; image: string; description: string; amount: number }) => {
     const cartCtx = useContext(CartContext);
     const price = `${props.price},00:-`;
-    const [size, setSize] = useState({});
+    const [size, setSize] = useState(34);
     const selectedSize = size;
     const { control } = useForm();
 
