@@ -6,13 +6,14 @@ export interface Product {
     price: number;
     image: string;
     amount: number;
+    size: any;
 }
 
 export interface UserData {
     name: string;
     email: string;
     phone: string;
-    adress: string;
+    address: string;
 }
 
 export interface DeliveryData {
@@ -22,9 +23,9 @@ export interface DeliveryData {
 }
 
 export interface PaymentData {
-    cardnumber: string;
-    expirationdate: string;
-    securecode: string;
+    cardNumber: string;
+    expirationDate: string;
+    secureCode: string;
 }
 
 export interface OrderKey {
@@ -36,9 +37,14 @@ export interface AdminUser {
     adminPassword: string;
 }
 
+
 export interface FaqCardData {
     id: number;
     title: string;
     desc: string;
     image: string;
+}
+export interface sizeOptions {
+    value: string;
+    label: string
 }

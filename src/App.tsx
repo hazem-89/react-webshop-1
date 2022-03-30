@@ -115,7 +115,7 @@ function App() {
           <Route path="/" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
-              <Header onShowCart={showCartHandler} />
+              <Header onShowCart={showCartHandler} showSideBar={undefined} />
               <main>
                 <Products products={products} />
               </main>
@@ -132,7 +132,7 @@ function App() {
           <Route path=":productId" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
-              <Header onShowCart={showCartHandler} />
+              <Header onShowCart={showCartHandler} showSideBar={undefined} />
               <ProductDetailedPage products={products} />
               <Footer />
             </Fragment>

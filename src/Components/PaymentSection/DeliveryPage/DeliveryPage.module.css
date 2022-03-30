@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 8rem;
+    height: 4rem;
+    margin-top: 2rem;
 }
 
 .checkout-header img {
@@ -15,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .delivery-form-holder {
@@ -113,13 +114,20 @@
     width: 20%;
     font-size: 1rem;
     color: rgb(119, 119, 119);
-    color: #333;
+    background-color: #d4cbf1;
     border: none;
     border-radius: 6px;
-    padding: 1rem 1.2rem;
-    margin-top: 3rem;
+    padding: 1rem;
+    margin-top: 1rem;
 }
+.exit-btn:hover {
+    transform: scale(103%);
+    transition: 150ms;
+    cursor: pointer;
+    background-color: #f05627;
+    color: rgb(247, 245, 245);
 
+}
 .form-btn {
     width: 80%;
     font-size: 1rem;
@@ -128,7 +136,7 @@
     border: none;
     border-radius: 6px;
     padding: 1rem 1.2rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .btn-text-separator {

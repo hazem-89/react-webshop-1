@@ -1,4 +1,4 @@
-import { MouseEventHandler} from "react";
+import { MouseEventHandler } from "react";
 import classes from './AddProductModal.module.css';
 import { FormikErrors, useFormik } from "formik";
 import { Product } from "../../data";
@@ -14,25 +14,25 @@ interface Props {
 
 const validate = (values: Product) => {
     const errors: FormikErrors<Product> = {};
- 
+
     if (!values.name) {
-      errors.name = 'Required';
+        errors.name = 'Required';
     } else if (values.name.length > 15 || values.name.length < 2) {
-      errors.name = 'Must be between 2 and 15 characters';
+        errors.name = 'Must be between 2 and 15 characters';
     }
 
     if (!values.brand) {
         errors.brand = 'Required';
-      } else if (values.brand.length > 15 || values.brand.length < 2) {
+    } else if (values.brand.length > 15 || values.brand.length < 2) {
         errors.brand = 'Must be between 2 and 15 characters';
-      }
+    }
 
     if (!values.price) {
-    errors.price = 'Required';
+        errors.price = 'Required';
     } else if (values.brand.length < 2) {
-    errors.brand = 'Must be between atleast 2 characters';
+        errors.brand = 'Must be between atleast 2 characters';
     }
-    
+
     if (!values.description) {
         errors.description = 'Required';
     }
@@ -40,7 +40,7 @@ const validate = (values: Product) => {
     if (!values.image) {
         errors.image = 'Required';
     }
-    
+
     return errors;
 };
 
@@ -55,6 +55,7 @@ const AddProductModal = (props: Props) => {
             description: '',
             image: '',
             amount: 0,
+            size: []
         },
         validate,
         onSubmit: (values) => {
@@ -64,13 +65,13 @@ const AddProductModal = (props: Props) => {
             props.savedNewProductData(newProductData);
         }
     });
-    
-    return(
+
+    return (
         <Modal onClose={props.onClose}>
             <form className={classes['form']} onSubmit={formik.handleSubmit}>
                 <div className={classes['form-header']}>
                     <h2 className={classes['admin-title']}>Add new product</h2>
-                    <button className={classes['close-btn']} onClick={props.onClose}><CloseIcon style={{fontSize: 32}} /></button>
+                    <button className={classes['close-btn']} onClick={props.onClose}><CloseIcon style={{ fontSize: 32 }} /></button>
                 </div>
                 <div className={classes['form-container']}>
                     <div className={classes['input-container']}>

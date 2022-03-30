@@ -56,6 +56,7 @@ const EditProductModal = (props: Props) => {
       description: props.editProductData[0].description,
       image: props.editProductData[0].image,
       amount: 0,
+      size: []
     },
     validate,
     onSubmit: (values) => {
@@ -141,7 +142,7 @@ const EditProductModal = (props: Props) => {
             </div>
 
             <div className={classes['form-btn-container']}>
-              <button className={classes['form-btn']} type="submit">ADD PRODUCT</button>
+              <button className={classes['form-btn']} type="submit">SAVE PRODUCT</button>
             </div>
           </div>
         </div>

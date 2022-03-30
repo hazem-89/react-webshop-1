@@ -88,7 +88,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-bottom: -4rem;
 
 }
@@ -110,17 +110,25 @@
     max-width: 550px;
     padding: 0 2rem;
     gap: 1rem;
+    margin-top: 3em;
 }
 
 .exit-btn {
     width: 20%;
     font-size: 1rem;
     color: rgb(119, 119, 119);
-    color: #333;
+    background-color: #d4cbf1;
     border: none;
     border-radius: 6px;
-    padding: 1rem 1.2rem;
-    margin-top: 3rem;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.exit-btn:hover {
+    transform: scale(103%);
+    transition: 150ms;
+    cursor: pointer;
+    background-color: #f05627;
+    color: rgb(247, 245, 245);
 }
 
 .form-btn {
@@ -131,7 +139,7 @@
     border: none;
     border-radius: 6px;
     padding: 1rem 1.2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .btn-text-separator {

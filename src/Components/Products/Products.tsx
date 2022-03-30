@@ -7,8 +7,8 @@ interface Props {
     products: Product[];
 }
 
-const Products = (props: Props) => {    
-    return(
+const Products = (props: Props) => {
+    return (
         <Fragment>
             <ProductHeader />
             <AvailableProducts products={props.products} />

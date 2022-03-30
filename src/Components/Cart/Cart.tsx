@@ -33,6 +33,7 @@ const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined
                     amount={item.amount}
                     price={item.price}
                     image={item.image}
+                    size={item.size}
                     onRemove={cartItemRemoveHandler.bind(null, item.id)}
                     onAdd={cartItemAddHandler.bind(null, item)}
                 />
