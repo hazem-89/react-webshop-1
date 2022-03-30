@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, useNavigate } from "react-router-dom";
 import CartProvider from "./Store/cart-provider";
 import { DeliveryData, PaymentData, Product, UserData } from "./data";
@@ -116,6 +118,7 @@ function App() {
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
               <Header onShowCart={showCartHandler} showSideBar={undefined} />
+              <ToastContainer />
               <main>
                 <Products products={products} />
               </main>
@@ -164,7 +167,9 @@ function App() {
           } />
         </Routes>
       </KeyProvider>
+      
     </CartProvider>
+
   );
 }
 
