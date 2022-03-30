@@ -19,7 +19,6 @@ import Footer from './Components/Layout/Footer';
 import Login from "./Components/Admin/Login";
 import AdminPage from "./Components/Admin/AdminPage";
 import { DUMMY_PRODUCTS } from "./DummyProducts";
-import AsideBar from "./Components/Layout/AsideBar";
 
 const loadProductsFromLS = () => {
   const localProducts = localStorage.getItem('products');

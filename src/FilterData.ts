@@ -1,5 +1,4 @@
 export const sizeOptions = [
-  { value: 34, label: '34' },
   { value: 35, label: '35' },
   { value: 36, label: '36' },
   { value: 37, label: '37' },

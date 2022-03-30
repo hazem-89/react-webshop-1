@@ -36,3 +36,7 @@ export interface AdminUser {
     adminName: string;
     adminPassword: string;
 }
+export interface sizeOptions {
+    value: string;
+    label: string;
+}

@@ -1,17 +1,12 @@
-import { SetStateAction, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useParams } from "react-router-dom"
-// import products from "../../App";
-
 import classes from './ProductDetailedPage.module.css';
 import CartContext from '../../Store/CartContext';
 import DetailedProductAddBtn from './DetailedProductAddBtn';
-
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { Product } from '../../data';
 import Select from 'react-select';
 import { sizeOptions } from '../../FilterData';
-// import FilterComponent from '../Products/ProductItem/FilterComponent';
-
 interface Props {
     products: Product[];
 }
@@ -19,7 +14,7 @@ interface Props {
 const ProductDetailedPage = (props: Props) => {
     const { productId } = useParams()
     const product = props.products.find((prod: Product) => prod.id === productId);
-    const [size, setSize] = useState(0);
+    const [size, setSize] = useState(34);
     const selectedSize = size;
     const cartCtx = useContext(CartContext);
 
@@ -40,6 +35,7 @@ const ProductDetailedPage = (props: Props) => {
         console.log(selectedSize);
     };
 
+
     return (
 
         <div className={classes.container}>
@@ -52,6 +48,22 @@ const ProductDetailedPage = (props: Props) => {
                 </div>
                 <div className={classes['info-desc']}>
                     <p>{product!.description}</p>
+                </div>
+                <div className={classes['buttons']}>
+                    {/* <button className={classes['size-btn']}>
+                        <span>Size</span>
+                    </button> */}
+                    {/* <FilterComponent /> */}
+                    <Select
+                        value={sizeOptions.find(obj => obj.value === size)}
+                        options={sizeOptions}
+                        className={classes['mb-3']}
+                        placeholder='Size'
+                        isSearchable
+                        autoFocus
+                        onChange={handleChange}
+                    />
+                    <DetailedProductAddBtn onAddToCart={addToCartHandler} />
                 </div>
                 <div className={classes['checkout-info-container']}>
                     <div className={classes['checkout-info']}>
@@ -69,22 +81,6 @@ const ProductDetailedPage = (props: Props) => {
                         <h4>Free returns </h4>
                         <span> - Always free</span>
                     </div>
-                </div>
-                <div className={classes['buttons']}>
-                    {/* <button className={classes['size-btn']}>
-                        <span>Size</span>
-                    </button> */}
-                    {/* <FilterComponent /> */}
-                    <Select
-                        value={sizeOptions.find(obj => obj.value === size)}
-                        options={sizeOptions}
-                        className='mb-3'
-                        placeholder='Size'
-                        isSearchable
-                        autoFocus
-                        onChange={handleChange}
-                    />
-                    <DetailedProductAddBtn onAddToCart={addToCartHandler} />
                 </div>
             </div>
         </div>
