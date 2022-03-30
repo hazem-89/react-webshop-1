@@ -1,15 +1,22 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import classes from './ProductItem.module.css';
 import ProductItemAddBtn from './ProductItemAddBtn';
 import CartContext from '../../../Store/CartContext';
 import { Fragment } from 'react';
+import Select from 'react-select'
+
 
 import { Link } from "react-router-dom";
+import { sizeOptions } from '../../../FilterData';
+import { Controller, useForm } from "react-hook-form";
 
 const ProductItem = (props: { price: number; id: string; name: string; brand: string; image: string; description: string; amount: number }) => {
     const cartCtx = useContext(CartContext);
     const price = `${props.price},00:-`;
+    const [size, setSize] = useState(34);
+    const selectedSize = size;
+    const { control } = useForm();
 
     const addToCartHandler = (amount: number) => {
         cartCtx.addItem({
@@ -20,8 +27,12 @@ const ProductItem = (props: { price: number; id: string; name: string; brand: st
             image: props.image,
             brand: props.brand,
             description: '',
+            size: selectedSize
         });
     };
+    const handleChange = (e: any) => {
+        setSize(e.value);
+    }
 
     return (
         <Fragment>
@@ -34,6 +45,25 @@ const ProductItem = (props: { price: number; id: string; name: string; brand: st
                     </div>
                 </li>
             </Link>
+            {/* <div className={classes.select}>
+                <h2>Available Sizes</h2>
+                <FilterComponent /></div> */}
+            <Controller
+                control={control}
+                rules={{ required: true }}
+                name="size"
+                render={() => (
+                    <Select
+                        value={sizeOptions.find(obj => obj.value === size)}
+                        options={sizeOptions}
+                        className='mb-3'
+                        placeholder='Size'
+                        isSearchable
+                        autoFocus
+                        onChange={handleChange}
+                    />
+                )}
+            />
             <div>
                 <ProductItemAddBtn onAddToCart={addToCartHandler} />
             </div>

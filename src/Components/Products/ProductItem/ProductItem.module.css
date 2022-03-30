@@ -1,16 +1,21 @@
 .product {
     display: flex;
     justify-content: space-between;
-    margin: 2rem;
+    margin: 1rem 0 0 2rem;
   }
   
   .product h3 {
-    margin: 0 0 0.25rem 0;
+    margin-bottom: .25rem;
+    font-size: 1.4rem;
+    font-weight: 600;
   }
   
   .price {
     margin-top: 0.25rem;
-    font-weight: bold;
     color: #333;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+  }
+
+  .select {
+    margin-left: 2rem;
   }
