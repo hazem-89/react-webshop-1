@@ -20,8 +20,7 @@ const AdminBoard = (props: Props) => {
     const products = props.products;
 
     const productsList = products.map(product => (
-        <div key={product.id}
-            className={classes['product-container']}>
+        <div key={product.id} className={classes['product-container']}>
             <div className={classes['product-image']}>
                 <img src={product.image} alt="productImage" />
             </div>
