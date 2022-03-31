@@ -4,6 +4,8 @@ import progressbar4 from '../../../assets/images/progressbar-4.png';
 import classes from './ConfirmationPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import { DeliveryData, PaymentData, UserData } from '../../../data';
+import { Fragment } from 'react';
+import CheckoutHeader from '../CheckoutHeader';
 
 interface Props {
     userData?: UserData;
@@ -30,20 +32,23 @@ const ConfirmationPage = (props: Props) => {
     });
 
     return (
-        <div className={classes['checkout-confirmation-container']}>
-            <div className={classes['checkout-header']}>
-                <img src={progressbar4} alt="" />
+        <Fragment>
+            <CheckoutHeader />
+            <div className={classes['checkout-confirmation-container']}>
+                <div className={classes['checkout-header']}>
+                    <img src={progressbar4} alt="" />
+                </div>
+                <div className={classes['confirmation-body']}>
+                    <h2>Congratulations!</h2>
+                    <span>Your order has been confirmed. Check your email for confirmation and detailed order information.</span>
+                    <span className={classes['ordernumber']}>{`Ordernumber: ${key.key}`}</span>
+                    <span>Thanks for buying from us!</span>
+                </div>
+                <div className={classes['btn-container']}>
+                    <button className={classes['confirmation-btn']} onClick={refreshPage}>BACK TO HOMEPAGE</button>
+                </div>
             </div>
-            <div className={classes['confirmation-body']}>
-                <h2>Congratulations!</h2>
-                <span>Your order has been confirmed. Check your email for confirmation and detailed order information.</span>
-                <span className={classes['ordernumber']}>{`Ordernumber: ${key.key}`}</span>
-                <span>Thanks for buying from us!</span>
-            </div>
-            <div className={classes['btn-container']}>
-                <button className={classes['confirmation-btn']} onClick={refreshPage}>BACK TO HOMEPAGE</button>
-            </div>
-        </div>
+        </Fragment>
     );
 }
 

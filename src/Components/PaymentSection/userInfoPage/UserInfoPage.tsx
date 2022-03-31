@@ -7,8 +7,10 @@ import { Fragment } from "react";
 
 import progressbar1 from '../../../assets/images/progressbar-1.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import TextField from '@mui/material/TextField';
 import { UserData } from "../../../data";
+import CheckoutHeader from "../CheckoutHeader";
 
 interface Props {
     savedUserData: (deliveryData: UserData) => void;
@@ -61,7 +63,9 @@ const UserInfoPage = (props: Props) => {
 
     return (
         <Fragment>
+            <CheckoutHeader />
             <div className={classes['checkout-header']}>
+                <ArrowBackIcon className={classes['arrow-back-icon-btn']} onClick={() => navigate(-1)}/>
                 <img src={progressbar1} alt="" />
             </div>
             <form className={classes['information-form']} onSubmit={formik.handleSubmit} autoComplete="off">
@@ -129,7 +133,6 @@ const UserInfoPage = (props: Props) => {
                 </div>
 
                 <div className={classes['form-btn-container']}>
-                    <button className={classes['exit-btn']} onClick={() => navigate(-1)}>EXIT</button>
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
                             <span>DELIVERY</span>
