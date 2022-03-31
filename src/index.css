@@ -17,6 +17,15 @@ body {
   background-color: #fff;
 }
 
+.progressPurple {
+  --toastify-color-progress-success: #936EFE;
+}
+
+.toastt {
+  margin-top: 4rem;
+}
+
+
 h1 {
   font-family: 'Syne Mono', monospace;
 }
