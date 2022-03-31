@@ -21,6 +21,7 @@ import { DUMMY_PRODUCTS } from "./DummyProducts";
 import Faq from "./Components/Faq/FaqPage";
 import { DummyFAQ } from "./DummyFAQ";
 import Contact from "./Components/Layout/Contact";
+import FaqQuestion from "./Components/Faq/FaqQuestion";
 
 const loadProductsFromLS = () => {
   const localProducts = localStorage.getItem('products');
@@ -157,9 +158,10 @@ function App() {
           <Route path="faq" element={
             <Fragment>
               {isCartOpen && <Cart onClose={hideCartHandler} />}
-              <Header onShowCart={showCartHandler} showSideBar={undefined} />
-              <Faq faqs={DummyFAQ} />
-              <Footer />
+            <Header onShowCart={showCartHandler}/>
+            <Faq faqs={DummyFAQ}/>
+            <FaqQuestion/>
+            <Footer />
             </Fragment>
           } />
         </Routes>
