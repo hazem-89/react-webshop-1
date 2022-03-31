@@ -44,10 +44,13 @@ const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined
     return (
         <Modal onClose={props.onClose}>
             <h2 className={classes.title}>Basket</h2>
-            {cartItems}
+            {hasItems ? cartItems : <div className={classes['cart-empty']}>Your Cart is empty</div>}
             <div className={classes.total}>
-                <span className={classes['total-title']}>TOTAL</span>
-                <span>{totalAmount}</span>
+
+                {hasItems ? <span className={classes['total-title']}>TOTAL</span> : <div className={classes['cart-e']}></div>}
+
+                {hasItems ? totalAmount : <div className={classes['cart-totalAmount']}></div>}
+                {!hasItems && <button className={classes['btn-continue-shopping']} onClick={props.onClose}>continue shopping</button>}
             </div>
             <button className={classes['btn--close']} onClick={props.onClose}><CloseIcon /></button>
             <Link to='/checkout/user-info'>
