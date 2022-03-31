@@ -31,7 +31,12 @@
     align-items: center;
     justify-content: flex-start;
 }
+.form-Card-Information {
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-weight: 600;
 
+}
 .input-container {
     display: flex;
     flex-direction: column;
@@ -44,7 +49,7 @@
 .input-container label,
 .expiration-input-container label,
 .secure-input-container label {
-    padding-left: 1rem;
+    padding-left: .1rem;
     color: rgb(119, 119, 119);
 }
 
@@ -110,7 +115,7 @@
     max-width: 550px;
     padding: 0 2rem;
     gap: 1rem;
-    margin-top: 3em;
+    margin: 2em 0;
 }
 
 .exit-btn {

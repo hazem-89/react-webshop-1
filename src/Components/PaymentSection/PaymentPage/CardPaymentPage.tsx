@@ -78,13 +78,13 @@ const CardPaymentPage = (props: Props) => {
                 <div className={classes['form-title']}>
                     <h2>Payment<span> - card</span></h2>
                 </div>
-
+                <div className={classes['form-Card-Information']}>Card Information</div>
                 <div className={classes['input-container']}>
                     <label htmlFor="cc-number">Card number</label>
                     <TextField
                         id="cardNumber"
-                        name="cc-number"
-                        type="cardNumber"
+                        name="cardNumber"
+                        type="tel"
                         autoComplete="cc-number"
                         placeholder='**** **** **** ****'
                         onChange={formik.handleChange}
@@ -102,9 +102,9 @@ const CardPaymentPage = (props: Props) => {
                         <label htmlFor="cc-exp">Expiration date</label>
                         <TextField
                             id="expirationDate"
-                            name="cc-exp"
+                            name="expirationDate"
                             autoComplete="cc-exp"
-                            type="expirationDate"
+                            type="tel"
                             placeholder='01/21'
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}

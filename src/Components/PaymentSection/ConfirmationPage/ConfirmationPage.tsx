@@ -15,17 +15,15 @@ const ConfirmationPage = (props: Props) => {
     const navigate = useNavigate()
 
     const { key } = useKey();
-    if(!key) return null;
+    if (!key) return null;
 
     function refreshPage() {
+        window.localStorage.setItem('cartState', '');
         navigate('/');
+        window.location.reload();
     }
 
-    console.log(props.deliveryData);
-    console.log(props.userData);
-    console.log(props.paymentData);
-
-    return(
+    return (
         <div className={classes['checkout-confirmation-container']}>
             <div className={classes['checkout-header']}>
                 <img src={progressbar4} alt="" />

@@ -61,7 +61,7 @@
 
 .buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1rem; 
 }
 
 .size-btn {
