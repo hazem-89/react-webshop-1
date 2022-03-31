@@ -19,25 +19,25 @@ interface Props {
 
 const DeliveryPage = (props: Props) => {
     const today = new Date()
-    const month = today.toLocaleString('en-EU', { month: 'long' })
+    const month = today.toLocaleString('en-EU', { month: 'short' })
 
     const plusOneDay = new Date(today)
     plusOneDay.setDate(plusOneDay.getDate() + 1)
-    const oneDayWeekDay = plusOneDay.toLocaleDateString('en-EU', { weekday: 'long' })
+    const oneDayWeekDay = plusOneDay.toLocaleDateString('en-EU', { weekday: 'short' })
     const oneDayDay = plusOneDay.toLocaleString('en-EU', { day: '2-digit' })
-    const oneDayDelivery = `${oneDayWeekDay} - ${oneDayDay}th ${month}`;
+    const oneDayDelivery = `${oneDayWeekDay} ${oneDayDay}th ${month}`;
 
     const plusTwoDays = new Date(today)
     plusTwoDays.setDate(plusTwoDays.getDate() + 2)
-    const twoDayWeekDay = plusTwoDays.toLocaleDateString('en-EU', { weekday: 'long' })
-    const twoDayDay = plusTwoDays.toLocaleString('en-EU', { day: '2-digit' })
-    const twoDayDelivery = `${twoDayWeekDay} - ${twoDayDay}th ${month}`;
+    const twoDayWeekDay = plusTwoDays.toLocaleDateString('en-EU', { weekday: 'short' })
+    const twoDayDay = plusTwoDays.toLocaleString('en-EU', { day: '2-digit'})
+    const twoDayDelivery = `${twoDayWeekDay} ${twoDayDay}th ${month}`;
 
     const plusThreeDays = new Date(today)
     plusThreeDays.setDate(plusThreeDays.getDate() + 3)
-    const threeDayWeekDay = plusThreeDays.toLocaleDateString('en-EU', { weekday: 'long' })
+    const threeDayWeekDay = plusThreeDays.toLocaleDateString('en-EU', { weekday: 'short' })
     const threeDayDay = plusThreeDays.toLocaleString('en-EU', { day: '2-digit' })
-    const threeDayDelivery = `${threeDayWeekDay} - ${threeDayDay}th ${month}`;
+    const threeDayDelivery = `${threeDayWeekDay} ${threeDayDay}th ${month}`;
 
     const navigate = useNavigate();
     const formik = useFormik({
@@ -63,10 +63,12 @@ const DeliveryPage = (props: Props) => {
                 </div>
                 <div className={classes['delivery-form-holder']} role='group' aria-labelledby="my-radio-group">
                     <div className={classes['del-container']}>
-                        <img src={instabox} alt="" />
-                        <div className={classes['del-text-container']}>
-                            <span className={classes['text-title']}>{oneDayDelivery}</span>
-                            <span className={classes['text-price']}>69:-</span>
+                        <div className={classes['del-info-container']}>
+                            <img src={instabox} alt="" />
+                            <div className={classes['del-text-container']}>
+                                <span className={classes['text-title']}>{oneDayDelivery}</span>
+                                <span className={classes['text-price']}>69:-</span>
+                            </div>
                         </div>
                         <input
                             id="instabox"
@@ -82,10 +84,12 @@ const DeliveryPage = (props: Props) => {
                     </div>
 
                     <div className={classes['del-container']}>
-                        <img src={budbee} alt="" />
-                        <div className={classes['del-text-container']}>
-                            <span className={classes['text-title']}>{threeDayDelivery}</span>
-                            <span className={classes['text-price']}>Free</span>
+                        <div className={classes['del-info-container']}>
+                            <img src={budbee} alt="" />
+                            <div className={classes['del-text-container']}>
+                                <span className={classes['text-title']}>{threeDayDelivery}</span>
+                                <span className={classes['text-price']}>Free</span>
+                            </div>
                         </div>
                         <input
                             id="budbee"
@@ -101,10 +105,12 @@ const DeliveryPage = (props: Props) => {
                     </div>
 
                     <div className={classes['del-container']}>
-                        <img src={postnord} alt="" />
-                        <div className={classes['del-text-container']}>
-                            <span className={classes['text-title']}>{twoDayDelivery}</span>
-                            <span className={classes['text-price']}>49:-</span>
+                        <div className={classes['del-info-container']}>
+                            <img src={postnord} alt="" />
+                            <div className={classes['del-text-container']}>
+                                <span className={classes['text-title']}>{twoDayDelivery}</span>
+                                <span className={classes['text-price']}>49:-</span>
+                            </div>
                         </div>
                         <input
                             id="postnord"

@@ -144,4 +144,8 @@
         height: 2rem;
         margin: 1rem 0;
     }
+
+    .del-container img {
+        height: 30px;
+    }
 }

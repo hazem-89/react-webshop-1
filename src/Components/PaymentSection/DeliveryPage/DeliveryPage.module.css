@@ -67,15 +67,22 @@
     border-radius: 8px;
 }
 
-.del-container input {
+.del-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.del-info-container img {
+    width: 125px;
+    height: auto;
+}
+
+.del-info-container input {
     margin-left: auto;
     width: 20px;
     height: 20px;
-}
-
-.del-container img {
-    width: 125px;
-    height: auto;
 }
 
 .del-text-container {
@@ -122,7 +129,7 @@
     justify-content: center;
     width: 100%;
     max-width: 560px;
-    padding: 0 2rem;
+    padding: 0 2rem 2rem 2rem;
     gap: 1rem;
 }
 
@@ -161,5 +168,19 @@
     .checkout-header {
         height: 2rem;
         margin: 1rem 0;
+    }
+
+    .del-info-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .del-text-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: .3rem;
+        margin-bottom: -.4rem;
     }
 }

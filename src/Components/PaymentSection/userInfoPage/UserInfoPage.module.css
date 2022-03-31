@@ -81,7 +81,7 @@
     justify-content: center;
     width: 100%;
     max-width: 550px;
-    padding: 0 2rem;
+    padding: 0 2rem 2rem 2rem;
     gap: 1rem;
 }
 
