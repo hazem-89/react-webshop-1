@@ -10,6 +10,8 @@ import postnord from '../../../assets/images/postnord.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DeliveryData } from '../../../data';
 import { useNavigate } from 'react-router-dom';
+import CheckoutHeader from '../CheckoutHeader';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 interface Props {
     savedDeliveryData: (deliveryData: DeliveryData) => void;
@@ -50,7 +52,9 @@ const DeliveryPage = (props: Props) => {
 
     return (
         <Fragment>
+            <CheckoutHeader />
             <div className={classes['checkout-header']}>
+                <ArrowBackIcon className={classes['arrow-back-icon-btn']} onClick={() => navigate(-1)}/>
                 <img src={progressbar2} alt="" />
             </div>
             <form className={classes['delivery-form']} onSubmit={formik.handleSubmit}>
@@ -117,7 +121,6 @@ const DeliveryPage = (props: Props) => {
                 </div>
 
                 <div className={classes['form-btn-container']}>
-                    <button className={classes['exit-btn']} onClick={() => navigate(-1)}>BACK</button>
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
                             <span>DELIVERY</span>

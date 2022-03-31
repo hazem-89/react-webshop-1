@@ -6,10 +6,12 @@ import { Fragment, useContext } from "react";
 
 import progressbar3 from '../../../assets/images/progressbar-3.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { DeliveryData, PaymentData } from '../../../data';
 import CartContext from '../../../Store/CartContext';
 import { useKey } from '../../../Store/ConfirmationContext';
 import TextField from '@mui/material/TextField';
+import CheckoutHeader from '../CheckoutHeader';
 
 interface FormValues {
     cardNumber: string;
@@ -71,14 +73,15 @@ const CardPaymentPage = (props: Props) => {
 
     return (
         <Fragment>
+            <CheckoutHeader />
             <div className={classes['checkout-header']}>
+                <ArrowBackIcon className={classes['arrow-back-icon-btn']} onClick={() => navigate(-1)}/>
                 <img src={progressbar3} alt="" />
             </div>
             <form id="usrForm" className={classes['card-payment-form']} onSubmit={formik.handleSubmit} autoComplete="on">
                 <div className={classes['form-title']}>
                     <h2>Payment<span> - card</span></h2>
                 </div>
-                <div className={classes['form-Card-Information']}>Card Information</div>
                 <div className={classes['input-container']}>
                     <label htmlFor="cc-number">Card number</label>
                     <TextField
@@ -143,7 +146,6 @@ const CardPaymentPage = (props: Props) => {
                 </div>
 
                 <div className={classes['form-btn-container']}>
-                    <button className={classes['exit-btn']} onClick={() => navigate(-1)}>BACK</button>
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
                             <span>CONFIRM ORDER</span>

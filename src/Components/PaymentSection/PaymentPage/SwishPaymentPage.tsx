@@ -6,10 +6,12 @@ import { Fragment, useContext } from "react";
 
 import progressbar3 from '../../../assets/images/progressbar-3.png';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { DeliveryData, UserData } from '../../../data';
 import CartContext from '../../../Store/CartContext';
 import { useKey } from '../../../Store/ConfirmationContext';
 import { TextField } from '@mui/material';
+import CheckoutHeader from '../CheckoutHeader';
 
 interface FormValues {
     phone: string;
@@ -54,7 +56,9 @@ const SwishPaymentPage = (props: Props) => {
 
     return (
         <Fragment>
+            <CheckoutHeader />
             <div className={classes['checkout-header']}>
+                <ArrowBackIcon className={classes['arrow-back-icon-btn']} onClick={() => navigate(-1)}/>
                 <img src={progressbar3} alt="" />
             </div>
             <form className={classes['information-form']} onSubmit={formik.handleSubmit}>
@@ -92,7 +96,6 @@ const SwishPaymentPage = (props: Props) => {
                 </div>
 
                 <div className={classes['form-btn-container']}>
-                    <button type='button' className={classes['exit-btn']} onClick={() => navigate(-1)}>BACK</button>
                     <button className={classes['form-btn']} type="submit">
                         <div className={classes['btn-text-separator']}>
                             <span>CONFIRM ORDER</span>
