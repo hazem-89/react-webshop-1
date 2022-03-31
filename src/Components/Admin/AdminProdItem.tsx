@@ -29,7 +29,7 @@ const AdminProdItem = (props: Props) => {
         <Fragment>
             <div className={classes['info-container']}>
                 <li className={classes.product}>
-                    <div>
+                    <div className={classes['info-text']}>
                         <h3>{props.name}</h3>
                         <div className={classes.brand}>{props.brand}</div>
                         <div className={classes.price}>{price}</div>

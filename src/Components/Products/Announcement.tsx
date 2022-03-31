@@ -1,10 +1,12 @@
 import React from 'react'
-import './Announcement.css'
+import './Announcement.css';
 
 
 const Announcement = () => {
   return (
-    <section className='announcement'>Announcement</section>
+    <section className='announcement'>
+      Free delivery available & free returns
+    </section>
   )
 }
 

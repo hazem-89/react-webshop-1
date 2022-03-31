@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 4rem;
-    margin-top: 1rem;
+    margin-top: 5rem;
     background-color: #333;
     color: #fafafa;
     gap: 6rem;
@@ -25,7 +25,7 @@
 }
 
 .brand-info-container {
-    max-width: 32rem;
+    max-width: 33rem;
     text-align: center;
     padding: 0 2rem;
 }
@@ -37,7 +37,7 @@
 }
 
 .footer-item-devider {
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid #fafafa2d;
     height: 1px;
     width: 100%;
     max-width: 1250px;
@@ -72,7 +72,7 @@
       }
 
     .footer-links-container {
-        gap: 2.5rem;
+        gap: 2rem;
         flex-direction: column;
     }
 

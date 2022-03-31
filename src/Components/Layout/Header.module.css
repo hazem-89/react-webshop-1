@@ -1,7 +1,7 @@
 .header {
     position: fixed;
     top: 0;
-    /* left: -20rem; */
+    left: 0;
     right: 0;
     width: 100%;
     height: 5rem;
@@ -12,12 +12,12 @@
   }
   
   .header-item-container {
-    width: 100%;
+    width: 90%;
     margin: 1.1rem auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1350px;
+    max-width: 1260px;
   }
 
   .header-item-container img {
@@ -27,11 +27,8 @@
     cursor: pointer;
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: 430px) {
     .header-item-container img {
-      padding-bottom: 1.7rem;
-      height: auto;
-      width: 170px;
-      margin-right: .5rem;
+      width: 110px;
     }
   }

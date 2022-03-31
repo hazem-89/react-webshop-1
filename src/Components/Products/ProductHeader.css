@@ -5,8 +5,8 @@
     justify-content: start;
     align-items: center;
     margin: 2rem auto 0 auto;
-    max-width: 1250px;
-    width: 81%;
+    max-width: 1260px;
+    width: 90%;
 }
 
 .product-header-container h2 {
@@ -66,4 +66,10 @@
 
 .sort-filter-container {
     display: flex;
+}
+
+@media (max-width: 600px) {
+    .product-header-container {
+        width: 76%;
+    }
 }

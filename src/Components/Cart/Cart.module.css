@@ -14,7 +14,6 @@
 
 .title {
       font-size: 1.8rem;
-      margin-top: 0rem;
   }
   
   .total {
@@ -33,12 +32,12 @@
 
   .btn--close {
       position: absolute;
-      top: 2rem;
+      top: 1.5rem;
       right: 2rem;
+      padding: .1rem .3rem .3rem .3rem;
       border: none;
       background-color: #333333;
       color: #fff;
-      padding-top: .2rem;
       border-radius: 4px;
   }
 
@@ -74,4 +73,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+  }
+
+  @media (max-width: 475px) {
+    .title {
+      margin-left: 1rem;
+  }
   }
