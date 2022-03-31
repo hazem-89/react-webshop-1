@@ -13,15 +13,21 @@ interface Props {
 
 const ConfirmationPage = (props: Props) => {
     const navigate = useNavigate()
+    window.localStorage.setItem('cartState', '');
 
     const { key } = useKey();
     if (!key) return null;
 
     function refreshPage() {
-        window.localStorage.setItem('cartState', '');
         navigate('/');
         window.location.reload();
     }
+
+    window.history.pushState(null, document.URL);
+    window.addEventListener('popstate', function(event) {
+    navigate('/');
+    window.location.reload();
+    });
 
     return (
         <div className={classes['checkout-confirmation-container']}>
