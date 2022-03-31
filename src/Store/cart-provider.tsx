@@ -9,6 +9,7 @@ const defaultCartState: CartContextState = {
 }
 
 const cartReducer = (state: any, action: any) => {
+
     if (action.type === 'ADD') {
         const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amount;
 
@@ -34,19 +35,23 @@ const cartReducer = (state: any, action: any) => {
     }
 
     if (action.type === 'REMOVE') {
-        const existingCartItemIdex = state.items.findIndex((item: { id: string; }) => item.id === action.id);
+        const existingCartItemIdex = state.items.findIndex((item: { id: string; size: any }) => item.id === action.id && item.size === action.size);
         const existingItem = state.items[existingCartItemIdex];
 
         const updatedTotalAmount = state.totalAmount - existingItem.price;
 
         let updatedItems;
         if (existingItem.amount === 1) {
-            updatedItems = state.items.filter((item: { id: string; }) => item.id !== action.id);
+
+            updatedItems = state.items.filter((item: { id: string; size: any }) => item.id !== action.id || item.size !== action.size);
+            console.log('if', updatedItems);
+
         } else {
             const updatedItem = { ...existingItem, amount: existingItem.amount - 1 };
             updatedItems = [...state.items];
             updatedItems[existingCartItemIdex] = updatedItem;
         }
+
         return {
             items: updatedItems,
             totalAmount: updatedTotalAmount,
@@ -66,20 +71,26 @@ const CartProvider = (props: { children: boolean | ReactChild | ReactFragment | 
         dispatchCartAction({ type: 'ADD', item: item });
     };
 
-    const removeItemFromCartHandler = (id: string) => {
-        dispatchCartAction({ type: 'REMOVE', id: id });
+    const removeItemFromCartHandler = (id: string, size: any) => {
+        dispatchCartAction({ type: 'REMOVE', id: id, size: size });
     };
 
+    const clearCart = () => {
+        dispatchCartAction(cartState)
+    }
     const cartContext = {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
         addItem: addItemToCartHandler,
         removeItem: removeItemFromCartHandler,
+        clearCart: clearCart,
     }
 
     useEffect(() => {
         localStorage.setItem('cartState', JSON.stringify(cartState))
     }, [cartState])
+
+
 
     return (
         <CartContext.Provider value={cartContext}>

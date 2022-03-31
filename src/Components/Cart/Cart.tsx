@@ -16,8 +16,8 @@ const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined
     const totalAmount = `${cartCtx.totalAmount},00:-`;
     const hasItems = cartCtx.items.length > 0;
 
-    const cartItemRemoveHandler = (id: string) => {
-        cartCtx.removeItem(id);
+    const cartItemRemoveHandler = (id: string, size: any) => {
+        cartCtx.removeItem(id, size);
     };
 
     const cartItemAddHandler = (item: Product) => {
@@ -26,15 +26,15 @@ const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined
 
     const cartItems = (
         <ul className={classes['cart-items']}>
-            {cartCtx.items.map((item: Product) => (
+            {cartCtx.items.map((item: Product, index: number) => (
                 <CartItem
-                    key={item.id}
+                    key={index}
                     name={item.name}
                     amount={item.amount}
                     price={item.price}
                     image={item.image}
                     size={item.size}
-                    onRemove={cartItemRemoveHandler.bind(null, item.id)}
+                    onRemove={cartItemRemoveHandler.bind(null, item.id, item.size)}
                     onAdd={cartItemAddHandler.bind(null, item)}
                 />
             ))}
