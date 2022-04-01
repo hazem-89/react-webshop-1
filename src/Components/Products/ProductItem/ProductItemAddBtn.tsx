@@ -12,7 +12,7 @@ const ProductItemAddBtn = (props: { onAddToCart: (arg0: number) => void; }) => {
         props.onAddToCart(amountNumber);
         toast.success('Added 1 item to Basket', {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 1200,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: false,
