@@ -1,46 +1,44 @@
 import React from "react";
-
-import AiOutlineHome from 'react-icons/ai'
+import * as AiIcon from 'react-icons/ai'
 import * as MdIcon from 'react-icons/md'
 import * as FcIcon from 'react-icons/fc'
-
 
 export const SideBarData = [
   {
     title: 'Home',
     link: '/',
     cName: 'aside-text',
-    // icon: <AiOutlineHome />
+    icon: <AiIcon.AiOutlineHome />
   },
   {
     title: 'User',
     link: '/',
     cName: 'aside-text',
-    // icon: <AiIcon.AiOutlineUser />
+    icon: <AiIcon.AiOutlineUser />
   },
   {
     title: 'About',
     link: '/',
     cName: 'aside-text',
-    // icon: <FcIcon.FcAbout />
+    icon: <FcIcon.FcAbout />
   },
   {
     title: 'Info',
     link: '/',
     cName: 'aside-text',
-    // icon: <AiIcon.AiOutlineInfoCircle />
+    icon: <AiIcon.AiOutlineInfoCircle />
   },
   {
     title: 'FAQ',
-    link: '/',
+    link: '/Faq',
     cName: 'aside-text',
-    // icon: <FcIcon.FcFaq />
+    icon: <FcIcon.FcFaq />
   },
   {
     title: 'Admin',
     link: '/login',
     cName: 'aside-text',
-    // icon: <MdIcon.MdAdminPanelSettings />
+    icon: <MdIcon.MdAdminPanelSettings />
   }
 
 ]
