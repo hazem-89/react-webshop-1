@@ -1,7 +1,7 @@
 .cart-items {
   list-style: none;
   margin-top: 0;
-  padding: 0;
+  padding: 0 1rem;
   max-height: 27.5rem;
   overflow: auto;
   -ms-overflow-style: none;
@@ -16,6 +16,8 @@
 
 .title {
   font-size: 1.8rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
 .total {
@@ -23,22 +25,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  font-weight: 600;
   font-size: 1.4rem;
-  margin: 2rem 0 0 0;
+  margin: 1rem 0 0 0;
   padding: 1rem 0;
 }
 
 .totalProducts {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 1rem;
   align-items: center;
+  font-size: 1.2rem;
   width: 100%;
   color: rgba(45, 42, 42, 0.696);
 }
 
 .totalProducts span {
-  color: rgb(27, 110, 235);
+  color: #936EFE;
+  font-weight: 600;
 }
 
 .totalAmount {
@@ -72,6 +76,7 @@
   color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .btn--order span {
@@ -126,17 +131,16 @@
 }
 
 @media (max-width: 475px) {
-  .title {
-    margin-left: 1rem;
-  }
-
-  .total {
-    margin: 0;
+  .cart-items {
+    padding: 0;
   }
 }
 
-@media (max-width: 360px) {
-  .totalProducts {
-    font-size: 1rem;
+@media (max-width: 375px) {
+  .cart-items {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+    max-height: 21rem;
   }
 }
