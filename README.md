@@ -1,3 +1,5 @@
+![alt text](https://github.com/nybbe123/react-webshop/blob/master/src/assets/images/Group%2038.png)
+
 # SHOE
 
 Our vision was to create an epic e-commerce application that sells premuim **Shoes**
