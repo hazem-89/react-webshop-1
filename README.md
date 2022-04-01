@@ -30,7 +30,18 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 # Requirements for passing:
-- [x] 
+- [x] Git & GitHub have been used
+- [x] The projectfile contains a README.md file
+- [x] The assignment is submitted on time
+- [x] A design system have been used
+- [x] React Router is used
+- [x] The forms at check-out can be filled in automatically
+- [ ] All fields must have validation rules
+- [x] The page must be fully responsive
+- [x] Mocked products are typed with a TS interface in a separate file
+- [ ] The project must be uploaded to Netlify or a similar service
 
 ### VG grade:
-- [x] 
+- [ ] All points for passing are met
+- [x] There is an admin page where you can change, add or delete products on the page
+- [x] All products must be saved in localstorage
