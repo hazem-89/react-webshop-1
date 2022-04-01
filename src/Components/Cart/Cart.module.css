@@ -87,18 +87,21 @@
 .btn-continue-shopping {
   position: absolute;
   bottom: 2rem;
-  width: 200px;
-  left: calc(50% - 100px);
-  padding: 1rem 1rem;
+  width: 260px;
+  left: calc(50% - 130px);
+  padding: 1rem 1.2rem;
   border: none;
-  background-color: #2a817c;
+  background-color: #333;
   color: #fff;
-  border-radius: 5rem;
+  border-radius: 6px;
 }
 
 .btn-continue-shopping:hover {
-  background-color: #1e87e2d1;
-  scale: 1.5;
+  background-color: #333;
+  transform: scale(103%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: 150ms;
+  cursor: pointer;
 }
 
 @media (max-width: 475px) {

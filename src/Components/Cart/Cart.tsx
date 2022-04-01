@@ -44,7 +44,7 @@ const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined
     return (
         <Modal onClose={props.onClose}>
             <h2 className={classes.title}>Basket</h2>
-            {hasItems ? cartItems : <div className={classes['cart-empty']}>Your Cart is empty</div>}
+            {hasItems ? cartItems : <div className={classes['cart-empty']}>Your cart is empty</div>}
             <div className={classes.total}>
 
                 {hasItems ? <span className={classes['total-title']}>TOTAL</span> : <div className={classes['cart-e']}></div>}
