@@ -17,7 +17,6 @@ const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined
     const totalCartItem = cartCtx.items.reduce((curNumber, item: Product) => {
         return curNumber + item.amount;
     }, 0);;
-    console.log(totalCartItem);
 
     const cartItemRemoveHandler = (id: string, size: any) => {
         cartCtx.removeItem(id, size);

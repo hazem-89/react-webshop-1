@@ -32,7 +32,6 @@ const ProductDetailedPage = (props: Props) => {
             description: product!.description,
             size: selectedSize,
         });
-        console.log(selectedSize);
     };
 
 
