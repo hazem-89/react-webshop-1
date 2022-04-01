@@ -5,7 +5,7 @@ The goal was to make the site as minimalistic and simple as possible but with al
 
 From the perspective of the admin user it is possible to login and add products as well as delete and edit.
 
-# [Demo]()
+# [Demo](https://flourishing-madeleine-966145.netlify.app/)
 
 # Getting Started with Create React App
 
