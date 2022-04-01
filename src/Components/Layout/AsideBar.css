@@ -1,4 +1,4 @@
-.sidebar-menu { 
+.sidebar-menu {
   background: rgb(252, 248, 248);
   width: 20rem;
   position: fixed;
@@ -10,17 +10,21 @@
   display: flex;
   justify-content: center;
 }
-.sidebar-menu.active { 
+
+.sidebar-menu.active {
   left: 0;
 }
+
 .aside-items {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   position: relative;
+  margin-left: 5rem;
 }
+
 .closeMenuBar {
   margin-left: 2rem;
   font-size: 3rem;
@@ -28,6 +32,7 @@
   top: 2rem;
   right: 1rem;
 }
+
 .aside-text {
   display: flex;
   align-items: start;
@@ -36,14 +41,24 @@
   font-weight: 500;
   padding: 8px 0px 8px 16px;
 }
+
 .aside-text a {
   width: 100%;
 }
-.aside-text a:hover{
-      color: rgb(107, 193, 228);
+
+.aside-text a:hover {
+  color: rgb(107, 193, 228);
 }
 
+.cName {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
 
+.cName h2 {
+  margin-left: 1em;
+}
 
 .hamcontainer {
   width: 40px;
@@ -82,15 +97,15 @@
     width: 35px;
     height: 25px;
   }
-  
+
   .first {
     height: 2.3px;
   }
-  
+
   .second {
     height: 2.3px;
   }
-  
+
   .third {
     height: 2.3px;
     border-radius: 100px;
