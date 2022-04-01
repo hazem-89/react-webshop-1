@@ -39,9 +39,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 - [x] All fields must have validation rules
 - [x] The page must be fully responsive
 - [x] Mocked products are typed with a TS interface in a separate file
-- [ ] The project must be uploaded to Netlify or a similar service
+- [x] The project must be uploaded to Netlify or a similar service
 
 ### VG grade:
-- [ ] All points for passing are met
+- [x] All points for passing are met
 - [x] There is an admin page where you can change, add or delete products on the page
 - [x] All products must be saved in localstorage
