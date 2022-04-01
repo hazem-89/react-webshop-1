@@ -1,7 +1,5 @@
 ![alt text](https://github.com/nybbe123/react-webshop/blob/master/src/assets/images/Group%2038.png)
 
-# SHOE
-
 Our vision was to create an epic e-commerce application that sells premuim **Shoes**
 The goal was to make the site as minimalistic and simple as possible but with all the neccesary functions. Through the webshop the user can view different shoes both general and in detail. Shoes can be putted in the basket both from the landingpage as well as in the detailed page. From the basket the user get an overview of their products as well as the amount and total cost. At the checkout the user will input their contact information, choose delivery partner, payment options and finally get an confirmation letter with a personal ordernumber. 
 
