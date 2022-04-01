@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { useFormik } from 'formik';
+import { FormikErrors, FormikValues, useFormik } from 'formik';
 
 import classes from './DeliveryPage.module.css';
 
@@ -16,6 +16,16 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 interface Props {
     savedDeliveryData: (deliveryData: DeliveryData) => void;
 }
+
+const validate = (values: FormikErrors<FormikValues>) => {
+    const errors: FormikErrors<FormikValues> = {};
+
+    if (!values.picked) {
+        errors.picked = 'You must choose a delivery method';
+    }
+
+    return errors;
+};
 
 const DeliveryPage = (props: Props) => {
     const today = new Date()
@@ -44,6 +54,7 @@ const DeliveryPage = (props: Props) => {
         initialValues: {
             picked: '',
         },
+        validate,
         onSubmit: values => {
             const pickedValues = JSON.parse(values.picked);
             props.savedDeliveryData(pickedValues);
@@ -125,6 +136,8 @@ const DeliveryPage = (props: Props) => {
                         />
                     </div>
                 </div>
+
+                {formik.touched.picked && formik.errors.picked ? <div className={classes.error}>{formik.errors.picked}</div> : null}
 
                 <div className={classes['form-btn-container']}>
                     <button className={classes['form-btn']} type="submit">

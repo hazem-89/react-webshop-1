@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useFormik } from 'formik';
+import { FormikErrors, FormikValues, useFormik } from 'formik';
 
 import classes from './PaymentPage.module.css';
 
@@ -12,12 +12,23 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CheckoutHeader from '../CheckoutHeader';
 
+const validate = (values: FormikErrors<FormikValues>) => {
+    const errors: FormikErrors<FormikValues> = {};
+
+    if (!values.picked) {
+        errors.picked = 'You must choose a payment method';
+    }
+
+    return errors;
+};
+
 const PaymentPage = () => {
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
             picked: '',
         },
+        validate,
         onSubmit: values => {
             if (values.picked === 'mastercard' || values.picked === 'visa') {
                 navigate('/checkout/payment/card')
@@ -74,6 +85,8 @@ const PaymentPage = () => {
                         />
                     </div>
                 </div>
+
+                {formik.touched.picked && formik.errors.picked ? <div className={classes.error}>{formik.errors.picked}</div> : null}
 
                 <div className={classes['form-btn-container']}>
                     <button className={classes['form-btn']} type="submit">

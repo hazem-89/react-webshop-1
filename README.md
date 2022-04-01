@@ -36,7 +36,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 - [x] A design system have been used
 - [x] React Router is used
 - [x] The forms at check-out can be filled in automatically
-- [ ] All fields must have validation rules
+- [x] All fields must have validation rules
 - [x] The page must be fully responsive
 - [x] Mocked products are typed with a TS interface in a separate file
 - [ ] The project must be uploaded to Netlify or a similar service
