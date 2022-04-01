@@ -5,15 +5,6 @@ The goal was to make the site as minimalistic and simple as possible but with al
 
 From the perspective of the admin user it is possible to login and add products as well as delete and edit.
 
-## Made by:
-**Jonatan Nyberg [github](https://github.com/nybbe123)**
-
-**Hazem Kavas [github](https://github.com/hazem-89)**
-
-**Kawan Majeed [github](https://github.com/Kawium)**
-
-**Isaaq Guleed [github](https://github.com/rchtect)**
-
 ## [demo]()
 
 # Getting Started with Create React App
@@ -28,6 +19,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Contributors to this project:
+**Jonatan Nyberg [github](https://github.com/nybbe123)**
+
+**Hazem Kavas [github](https://github.com/hazem-89)**
+
+**Kawan Majeed [github](https://github.com/Kawium)**
+
+**Isaaq Guleed [github](https://github.com/rchtect)**
 
 # Requirements for passing:
 - [x] Git & GitHub have been used
