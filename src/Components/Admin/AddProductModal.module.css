@@ -19,7 +19,8 @@
 .admin-title {
     width: 100%;
     max-width: 490px;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
     padding: 0 .6rem;
     padding-bottom: .5rem;
 }
@@ -112,18 +113,21 @@
     font-style: italic;
 }
 
-@media (max-width: 430px) {
-    .form-container {
-        padding: 0;
-        box-shadow:none;
+@media (max-width: 480px) {
+    .form {
+        padding: 1rem 1rem;
+    }
+
+    .form-header {
+        width: 100%;
+        margin-top: 0rem;
     }
 
     .admin-title {
-        margin-left: 2rem;
-        font-size: 1.8rem;
+        padding: 0;
     }
 
-    .form-btn-container {
-        padding: 0;
+    .close-btn {
+        padding-top: .3rem;
     }
 }

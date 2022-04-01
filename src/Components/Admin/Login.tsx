@@ -6,6 +6,7 @@ import classes from './Login.module.css';
 import { Fragment } from "react";
 import { AdminUser } from "../../data";
 import TextField from '@mui/material/TextField';
+import CheckoutHeader from "../PaymentSection/CheckoutHeader";
 
 interface FormValues {
     email: string;
@@ -51,6 +52,7 @@ const Login = () => {
 
     return(
         <Fragment>
+            <CheckoutHeader />
             <form className={classes['information-form']} onSubmit={formik.handleSubmit}>
                 <div className={classes['form-title']}>
                     <h2>Admin Login</h2>

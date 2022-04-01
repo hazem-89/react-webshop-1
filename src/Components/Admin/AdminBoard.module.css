@@ -48,11 +48,10 @@
 .board-container {
     background-color: white;
     width: 100%;
-    height: 70%;
+    height: 80%;
     border-radius: 12px;
     max-width: 1250px;
     border-radius: 10px;
-    gap: 3rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -84,4 +83,30 @@
 
 .product-item-container {
     width: 100%;
+}
+
+@media (max-width: 680px) {
+    .product-container {
+        flex-direction: column;
+    }
+
+    .product-image img {
+        height: 14rem;
+        width: 32rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .board {
+        padding: 0rem;
+    }
+
+    .board-container {
+        margin-top: 10rem;
+        background-color: transparent;
+        height: 100%;
+        border-radius: none;
+        border-radius: none;
+        box-shadow: none;
+    }
 }

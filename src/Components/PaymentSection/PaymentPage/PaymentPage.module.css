@@ -1,17 +1,31 @@
 .checkout-header {
+    width: 100%;
+    max-width: 555px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
+}
+
+.arrow-back-icon-btn {
+    position: absolute;
+    left: 0;
+    top: 53%;
+    transform: translateY(-53%);
+    margin-left: 2rem;
+    font-size: 30px;
+    color: #333;
 }
 
 .checkout-header img {
-    width: 200px;
+    width: 160px;
     height: auto;
 }
 
-.delivery-form {
+.payment-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +33,7 @@
     gap: 1.5rem;
 }
 
-.delivery-form-holder {
+.payment-form-holder {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +47,8 @@
     width: 100%;
     max-width: 550px;
     padding: 0 2rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -88,38 +103,20 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 550px;
+    max-width: 560px;
     padding: 0 2rem;
     gap: 1rem;
 }
 
-.exit-btn {
-    width: 20%;
-    font-size: 1rem;
-    color: rgb(119, 119, 119);
-    background-color: #d4cbf1;
-    border: none;
-    border-radius: 6px;
-    padding: 1rem;
-    margin-top: 1rem;
-}
-.exit-btn:hover {
-    transform: scale(103%);
-    transition: 150ms;
-    cursor: pointer;
-    background-color: #f05627;
-    color: rgb(247, 245, 245);
-}
-
 .form-btn {
-    width: 80%;
+    width: 100%;
     font-size: 1rem;
     background-color: #936EFE;
     color: #fff;
     border: none;
     border-radius: 6px;
     padding: 1rem 1.2rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .btn-text-separator {
@@ -142,24 +139,13 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     .checkout-header {
-        height: 5rem;
-    }
-    
-    .information-form {
-        gap: 0rem;
-    }
-    
-    .form-title {
-        font-size: 1.2rem;
+        height: 2rem;
+        margin: 1rem 0;
     }
 
-    .exit-btn {
-        width: 25%;
-    }
-    
-    .form-btn {
-        width: 75%;
+    .del-container img {
+        height: 30px;
     }
 }

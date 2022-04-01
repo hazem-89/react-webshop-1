@@ -47,3 +47,23 @@ button {
     color: #fafafa;
     font-size: 1.2rem;
 }
+
+@media (max-width: 680px) {
+  .info-container {
+    margin-left: -1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .price {
+    margin-top: .5rem;
+  }
+
+  .product {
+    margin: 1rem;
+  }
+
+  .info-container {
+    margin-left: -.4rem;
+  }
+}
