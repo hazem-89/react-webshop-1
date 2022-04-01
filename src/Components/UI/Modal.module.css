@@ -23,16 +23,34 @@
 
 @media (min-width: 768px) {
   .modal {
+    margin-top: 2rem;
     width: 40rem;
     left: calc(50% - 20rem);
+    height: auto;
   }
 }
 
-@media (max-width: 380px) {
+@media (min-width: 410px) {
+  .modal {
+    top: 1rem;
+    overflow: auto;
+  }
+}
+
+@media (min-width: 360px) {
+  .modal {
+    top: 1rem;
+    overflow: auto;
+    max-height: 600px;
+  }
+}
+
+@media (max-width: 320px) {
   .modal {
     top: 1rem;
     height: 40rem;
     overflow: auto;
+    max-height: 400px;
   }
 }
 

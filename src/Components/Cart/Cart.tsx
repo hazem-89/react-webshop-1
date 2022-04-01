@@ -9,12 +9,15 @@ import CartItem from './CartItem';
 import classes from './Cart.module.css';
 import CartContext from '../../Store/CartContext';
 import { Product } from '../../data';
-
 const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined; }) => {
     const cartCtx = useContext(CartContext);
 
     const totalAmount = `${cartCtx.totalAmount},00:-`;
     const hasItems = cartCtx.items.length > 0;
+    const totalCartItem = cartCtx.items.reduce((curNumber, item: Product) => {
+        return curNumber + item.amount;
+    }, 0);;
+    console.log(totalCartItem);
 
     const cartItemRemoveHandler = (id: string, size: any) => {
         cartCtx.removeItem(id, size);
@@ -46,10 +49,13 @@ const Cart = (props: { onClose: MouseEventHandler<HTMLButtonElement> | undefined
             <h2 className={classes.title}>Basket</h2>
             {hasItems ? cartItems : <div className={classes['cart-empty']}>Your cart is empty</div>}
             <div className={classes.total}>
-
-                {hasItems ? <span className={classes['total-title']}>TOTAL</span> : <div className={classes['cart-e']}></div>}
-
-                {hasItems ? totalAmount : <div className={classes['cart-totalAmount']}></div>}
+                <div className={classes.totalProducts}>
+                    {hasItems ? <div>You Have <span> {totalCartItem}</span> items in your cart</div> : <div></div>}
+                </div>
+                <div className={classes.totalAmount}>
+                    {hasItems ? <span className={classes['total-title']}>To Pay:</span> : <div className={classes['cart-e']}></div>}
+                    {hasItems ? totalAmount : <div className={classes['cart-totalAmount']}></div>}
+                </div>
                 {!hasItems && <button className={classes['btn-continue-shopping']} onClick={props.onClose}>continue shopping</button>}
             </div>
             <button className={classes['btn--close']} onClick={props.onClose}><CloseIcon /></button>

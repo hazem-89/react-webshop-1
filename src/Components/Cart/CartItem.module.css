@@ -124,10 +124,10 @@ img {
   img {
     width: 24rem;
   }
- }
+}
 
- @media (max-width: 350px) {
+@media (max-width: 350px) {
   img {
     width: 22rem;
   }
- }
+}

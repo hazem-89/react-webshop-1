@@ -20,15 +20,36 @@
 
 .total {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
   font-weight: 600;
   font-size: 1.4rem;
   margin: 2rem 0 0 0;
+  padding: 1rem 0;
+}
+
+.totalProducts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: rgba(45, 42, 42, 0.696);
+}
+
+.totalProducts span {
+  color: rgb(27, 110, 235);
+}
+
+.totalAmount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding: 1rem;
 }
 
-.total-title {
+.totalAmount.total-title {
   font-weight: 300;
 }
 
@@ -107,5 +128,15 @@
 @media (max-width: 475px) {
   .title {
     margin-left: 1rem;
+  }
+
+  .total {
+    margin: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .totalProducts {
+    font-size: 1rem;
   }
 }
